@@ -1,0 +1,43 @@
+void List::CreateItemListFromFile(Items *&head)
+{
+    Items *itemPtr;
+    itemPtr = NULL;
+    itemPtr = new Items;
+    bool ok;
+    QStringList list;
+    QString line1;
+    QString line2;
+
+   QFile inputFile(":/Data/day1.txt");                         //file name
+    if (inputFile.open(QIODevice::ReadOnly))                   //associating inputFile
+    {
+       QTextStream in(&inputFile);                             // associating in to input file
+
+       while (!in.atEnd())                                     // while infile
+       {
+           QString line = in.readLine(); //  reading in qstring for date
+           itemPtr->buyDate = line;      // date to linked list
+
+           line = in.readLine();               //reading line as a qstring
+           int id = line.toInt(&ok, 10);      // convert qstring to int   
+           (itemPtr->mID) = id;               // id to linked list
+
+           line = in.readLine();            // reading line to a qstring
+           (itemPtr->name) = line;          // qstring to linked list
+
+           line = in.readLine();                // used for two items in one line, not necessary here
+           list = line.split(QRegExp("\\s+"));
+           line1 = list.at(0);
+           line2 = list.at(1);
+           double val = line1.toDouble();
+           (itemPtr->price) = val;
+           int quantity = line2.toInt(&ok, 10);
+           (itemPtr->quantity) = quantity;
+
+           AddToHead(itemPtr, head);      // linked list stuff
+
+           itemPtr = new Items;     // linked list stuff
+       }
+        inputFile.close();
+    }
+  }
