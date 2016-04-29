@@ -95,8 +95,8 @@ QSet<Testimonial>* ReadTestimonialFile(QString filename){
             getline(input, text);
             getline(input, customer);
             
-            set->insert(QString::fromStdString(text),
-                        QString::fromStdString(customer));
+            set->insert(Testimonial(QString::fromStdString(text),
+                                    QString::fromStdString(customer)));
             
             getline(input, delim);
         }
