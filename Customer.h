@@ -14,19 +14,23 @@
 #ifndef CUSTOMER_H
 #define CUSTOMER_H
 
+#include <iostream>
+#include "sqlite3.h"
 #include "Address.h"
 
-enum Interest{NOT_INTERESTED, SOMEWHAT_INTERESTED, VERY_INTERESTED};
+enum Interest{NOT_INTERESTED, SOMEWHAT_INTERESTED, VERY_INTERESTED, INVALID_VALUE};
 
 class Customer{
 private:
+    sqlite3* db;
     QString name;
     Address address;
-    Interest interest;
-    bool key;
+    
+    int searchDB(sqlite3_stmt*& stmt, const char* field, const char* table) const;
+    template<typename T> void updateField(const char* field, T value, const char* table, const char* primaryKey);
     
 public:
-    Customer(QString name, Address address, Interest interest, bool isKey);
+    Customer(sqlite3* db, QString name);
     
     QString getName() const;
     QString getAddress() const;
@@ -36,7 +40,6 @@ public:
     QString toString() const;
     
     void setName(QString name);
-    void setAddress(Address address);
     void setStreetAddress(QString streetAddress);
     void setCity(QString city);
     void setState(QString state);

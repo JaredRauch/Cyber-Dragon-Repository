@@ -14,30 +14,17 @@
 #include <iostream>
 #include <QApplication>
 #include "FileIO.h"
+#include "sha1.h"
+#include "Database.h"
 
 
-int main(int argc, char *argv[]) {
-    QMap<QString, Customer>* map;
+int main() {
+    Database db("iCyberSecurity.sqlite");
+    Customer* customer;
+    Testimonial* testimonial;
     
-    map = ReadCustomerFile("customers.txt");
+    db.loginAsCustomer("John Doe", "password", customer, testimonial);
     
-    QMap<QString, Customer>::iterator it = map->begin();
-    
-    while(it != map->end()){
-        cout << it.value().getName().toStdString() << endl
-             << it.value().getAddress().toStdString() << endl;
-        
-        switch(it.value().getInterest()){
-            case NOT_INTERESTED : cout << "Not Interested\n"; break;
-            case SOMEWHAT_INTERESTED : cout << "Somewhat Interested\n"; break;
-            case VERY_INTERESTED : cout << "Very Interested\n"; break;
-        }
-        
-        cout << (it.value().isKey() ? "key" : "nice to have")
-             << endl << endl;
-        
-        it++;
-    }
-    
-    SaveCustomerFile("customers.txt", map);
+    cout << customer->toString().toStdString() << endl
+         << testimonial->getText().toStdString();   
 }

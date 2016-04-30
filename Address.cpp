@@ -4,68 +4,105 @@
  * and open the template in the editor.
  */
 
+#include <vector>
+
 #include "Address.h"
 
 Address::Address(){
-    streetAddress = "";
-    city = "";
-    state = "";
-    zip = "";
+    db = NULL;
+    customer = "";
 }
 
-Address::Address(QString streetAddress, QString city, QString state, QString zip){
-    this->streetAddress = streetAddress;
-    this->city = city;
-    this->state = state;
-    this->zip = zip;
+Address::Address(sqlite3* db, QString customer){
+    this->db = db;
+    this->customer = customer;
 }
 
 QString Address::getStreetAddress() const{
-    return streetAddress;
+    return searchDB("a_street_address");
 }
 
 QString Address::getCity() const{
-    return city;
+    return searchDB("a_city");
 }
 
 QString Address::getState() const{
-    return state;
+    return searchDB("a_state");
 }
 
 QString Address::getZip() const{
-    return zip;
+    return searchDB("a_zip");
+}
+
+void Address::setStreetAddress(QString streetAddress){
+    updateField("a_street_address", streetAddress);
+}
+
+void Address::setCity(QString city){
+    updateField("a_city", city);
+}
+
+void Address::setState(QString state){
+    updateField("a_state", state);
+}
+
+void Address::setZip(QString zip){
+    updateField("a_zip", zip);
 }
     
 QString Address::toString() const{
     ostringstream oss;
     
-    oss << streetAddress.toStdString() << endl
-        << city.toStdString();
+    oss << getStreetAddress().toStdString() << endl
+        << getCity().toStdString();
     
-    if(state != "DC" && state != "D.C."){
-        oss << ", " << state.toStdString() << " ";
+    if(getState() != "DC" && getState() != "D.C."){
+        oss << ", " << getState().toStdString() << " ";
     }
     else{
         oss << " ";
     }
     
-    oss << zip.toStdString();
+    oss << getZip().toStdString();
     
     return QString::fromStdString(oss.str());
 }
 
-void Address::setStreetAddress(QString streetAddress){
-    this->streetAddress = streetAddress;
+QString Address::searchDB(const char* field) const{
+    ostringstream sqlCmmd;
+    sqlCmmd << "SELECT "
+            << field
+            << " FROM ics_addresses WHERE a_customer='"
+            << customer.toStdString()
+            << "';";
+    
+    sqlite3_stmt* stmt;
+    int rc = sqlite3_prepare_v2(db, sqlCmmd.str().c_str(), -1, &stmt, NULL);
+    
+    rc = sqlite3_step(stmt);
+    
+    if(rc != SQLITE_DONE){
+        return QString(static_cast<const char*>(sqlite3_column_blob(stmt, 0)));
+    }
+    else{
+        return "";
+    }
 }
 
-void Address::setCity(QString city){
-    this->city = city;
-}
+void Address::updateField(const char* field, QString value){
+    char* errMsg;
+    
+    ostringstream sqlCmmd;
+    sqlCmmd << "UPDATE ics_addresses SET "
+            << field
+            << "='"
+            << value.toStdString()
+            << "' WHERE a_customer=" 
+            << customer.toStdString();
 
-void Address::setState(QString state){
-    this->state = state;
-}
-
-void Address::setZip(QString zip){
-    this->zip = zip;
+    sqlite3_exec(db, sqlCmmd.str().c_str(), NULL, 0, &errMsg);
+    
+    if(errMsg != NULL){
+        cerr << errMsg << endl;
+    }
 }

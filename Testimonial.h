@@ -14,23 +14,24 @@
 #ifndef TESTIMONIAL_H
 #define TESTIMONIAL_H
 
+#include <iostream>
+#include <sstream>
 #include <QString>
+#include "sqlite3.h"
 using namespace std;
 
 class Testimonial{
 private:
-    QString text;
+    sqlite3* db;
     QString customer;
     
 public:
-    Testimonial();
-    Testimonial(QString text, QString customer);
+    Testimonial(sqlite3* db, QString customer);
     
     QString getText() const;
     QString getCustomer() const;
     
     void setText(QString text);
-    void setCustomer(QString customer);
 };
 
 #endif /* TESTIMONIAL_H */
