@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralWidget"/>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>400</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuCustomer">
+    <property name="title">
+     <string>Customer</string>
+    </property>
+    <addaction name="actionSales_Pitch"/>
+    <addaction name="actionConcept_of_operations"/>
+    <addaction name="actionService_options"/>
+    <addaction name="actionMaintenance_plan"/>
+    <addaction name="actionGuarantee_Policy"/>
+    <addaction name="actionCustomer_Testimonials"/>
+    <addaction name="actionRequest_Pamphlet"/>
+    <addaction name="actionOrder_Products"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuCustomer"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionSales_Pitch">
+   <property name="text">
+    <string>Sales Pitch</string>
+   </property>
+  </action>
+  <action name="actionConcept_of_operations">
+   <property name="text">
+    <string>Concept of Operations</string>
+   </property>
+  </action>
+  <action name="actionService_options">
+   <property name="text">
+    <string>Service Options</string>
+   </property>
+  </action>
+  <action name="actionMaintenance_plan">
+   <property name="text">
+    <string>Maintenance Plan</string>
+   </property>
+  </action>
+  <action name="actionGuarantee_Policy">
+   <property name="text">
+    <string>Guarantee Policy</string>
+   </property>
+  </action>
+  <action name="actionCustomer_Testimonials">
+   <property name="text">
+    <string>Customer Testimonials</string>
+   </property>
+  </action>
+  <action name="actionRequest_Pamphlet">
+   <property name="text">
+    <string>Request Pamphlet</string>
+   </property>
+  </action>
+  <action name="actionOrder_Products">
+   <property name="text">
+    <string>Order Products</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>
