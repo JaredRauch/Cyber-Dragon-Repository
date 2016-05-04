@@ -31,8 +31,7 @@ private:
     
     unsigned* encryptPassword(QString password) const;
     bool validateCustomerLogin(QString username, unsigned* digest) const;
-    void getCustomerObject(QString username) const;
-    void getTestimonialObject(QString username) const;
+    bool validateAdminLogin(QString username, unsigned* digest) const;
     
 public:
     Database(QString databaseName);
@@ -41,6 +40,13 @@ public:
     void loginAsCustomer(QString username, QString password, Customer*& customer, Testimonial*& testimonial);
     void loginAsAdmin(QString username, QString password, QMap<QString, Customer>*& customerMap, QSet<Testimonial>*& testimonials);
     
+    void registerCustomer(QString username, QString password);
+    void registerAdmin(QString username, QString password);
+    
+    void AddCustomer(QString  name, 
+                     QString  streetAddress, QString city, QString state, QString zip,
+                     Interest interest,
+                     bool     isKey);
 };
 
 #endif /* DATABASE_H */

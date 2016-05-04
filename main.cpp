@@ -13,18 +13,43 @@
 
 #include <iostream>
 #include <QApplication>
-#include "FileIO.h"
-#include "sha1.h"
+#include <vector>
 #include "Database.h"
+#include "Purchase.h"
 
 
 int main() {
     Database db("iCyberSecurity.sqlite");
-    Customer* customer;
-    Testimonial* testimonial;
     
-    db.loginAsCustomer("John Doe", "password", customer, testimonial);
+    QMap<QString, Customer>* map;
+    QSet<Testimonial>* set;
+    db.loginAsAdmin("admin", "pass", map, set);
     
-    cout << customer->toString().toStdString() << endl
-         << testimonial->getText().toStdString();   
+    QMap<QString, Customer>::iterator it = map->begin();
+    
+    list<Purchase>* purchases;
+    while(it != map->end()){
+        cout << it->toString().toStdString() << endl;
+        
+        purchases = it->getPurchases();
+        
+        list<Purchase>::iterator purchIt = purchases->begin();
+        
+        if(purchIt == purchases->end()){
+            cout << endl;
+        }
+        
+        while(purchIt != purchases->end()){
+            cout << "     " << purchIt->getCustomerName().toStdString() << endl
+                 << "     " << purchIt->getService() << endl
+                 << "     " << purchIt->getPrice()   << endl
+                 << "     " << purchIt->getStartDate().toString().toStdString() << endl
+                 << "     " << purchIt->getEndDate().toString().toStdString()   << endl
+                 << endl;
+            purchIt++;
+        }
+        
+        
+        it++;
+    }
 }

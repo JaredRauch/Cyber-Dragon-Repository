@@ -5,54 +5,78 @@
  */
 
 #include "Customer.h"
+#include "Date.h"
 
 Customer::Customer(sqlite3* db, QString name){
     this->db = db;
     this->name = name;
-    this->address = Address(db, name);
 }
     
 QString Customer::getName() const{
     return name;
 }
 
-QString Customer::getAddress() const{
-    return address.toString();
+QString Customer::getStreetAddress() const{
+    sqlite3_stmt* stmt = searchDB("a_street_address", "ics_addresses", "a_customer");
+    return QString(static_cast<const char*>(sqlite3_column_blob(stmt, 0)));
 }
 
-Address Customer::getAddressObject() const{
-    return address;
+QString Customer::getCity() const{
+    sqlite3_stmt* stmt = searchDB("a_city", "ics_addresses", "a_customer");
+    return QString(static_cast<const char*>(sqlite3_column_blob(stmt, 0)));
+}
+
+QString Customer::getState() const{
+    sqlite3_stmt* stmt = searchDB("a_state", "ics_addresses", "a_customer");
+    return QString(static_cast<const char*>(sqlite3_column_blob(stmt, 0)));
+}
+
+QString Customer::getZip() const{
+    sqlite3_stmt* stmt = searchDB("a_zip", "ics_addresses", "a_customer");
+    return QString(static_cast<const char*>(sqlite3_column_blob(stmt, 0)));
 }
 
 Interest Customer::getInterest() const{
-    sqlite3_stmt* stmt;
-    int rc = searchDB(stmt, "c_interest", "ics_customers");
-    
-    if(rc == SQLITE_ROW){
-        return Interest(sqlite3_column_int(stmt, 0));
-    }
-    else{
-        return INVALID_VALUE;
-    }
+    sqlite3_stmt* stmt = searchDB("c_interest", "ics_customers", "c_name");
+    return (Interest)sqlite3_column_int(stmt, 0);
 }
 
 bool Customer::isKey() const{
+    sqlite3_stmt* stmt = searchDB("c_is_key", "ics_customers", "c_name");
+    return (bool)sqlite3_column_int(stmt, 0);
+}
+
+list<Purchase>* Customer::getPurchases() const{
+    ostringstream sqlCmmd;
+    sqlCmmd << "SELECT p_order_id FROM ics_purchases WHERE p_customer = '" << name.toStdString() << "'";
     sqlite3_stmt* stmt;
-    int rc = searchDB(stmt, "c_is_key", "ics_customers");
+    int rc = sqlite3_prepare_v2(db, sqlCmmd.str().c_str(), -1, &stmt, NULL);
+    rc = sqlite3_step(stmt);
     
-    if(rc != SQLITE_DONE){
-        return (bool)sqlite3_column_int(stmt, 0);
+    list<Purchase>* purchases = new list<Purchase>();
+    while(rc != SQLITE_DONE){
+        purchases->push_back(Purchase(db, sqlite3_column_int(stmt, 0)));
+        rc = sqlite3_step(stmt);
     }
-    else{
-        return false;
-    }
+    
+    return purchases;
 }
 
 QString Customer::toString() const{
     ostringstream oss;
     
     oss << name.toStdString() << endl
-        << getAddress().toStdString() << endl
+        << getStreetAddress().toStdString() << endl
+        << getCity().toStdString();
+    
+    if(getState() != "DC" && getState() != "D.C."){
+        oss << ", " << getState().toStdString() << " ";
+    }
+    else{
+        oss << " ";
+    }
+    
+    oss << getZip().toStdString() << endl
         << getInterest() << endl
         << isKey();
     
@@ -60,34 +84,23 @@ QString Customer::toString() const{
 }
     
 void Customer::setName(QString name){
-    char* errMsg;
-    ostringstream sqlCmmd;
-    sqlCmmd << "UPDATE ics_customers SET c_name = "
-            << name.toStdString()
-            << "WHERE c_name = "
-            << this->name.toStdString();
-    
-    sqlite3_exec(db, sqlCmmd.str().c_str(), NULL, 0, &errMsg);
-    
-    if(errMsg != NULL){
-        cerr << errMsg;
-    }
+    updateField("c_name", name.toStdString(), "ics_customers", "c_name");
 }
 
 void Customer::setStreetAddress(QString streetAddress){
-    address.setStreetAddress(streetAddress);
+    updateField("a_street_address", streetAddress.toStdString(), "ics_addresses", "a_customer");
 }
 
 void Customer::setCity(QString city){
-    address.setCity(city);
+    updateField("a_city", city.toStdString(), "ics_addresses", "a_customer");
 }
 
 void Customer::setState(QString state){
-    address.setState(state);
+    updateField("a_state", state.toStdString(), "ics_addresses", "a_customer");
 }
 
 void Customer::setZip(QString zip){
-    address.setZip(zip);
+    updateField("a_zip", zip.toStdString(), "ics_addresses", "a_customer");
 }
     
 void Customer::setInterest(Interest interest){
@@ -98,21 +111,43 @@ void Customer::setIsKey(bool isKey){
     updateField("c_is_key", int(isKey), "ics_customers", "c_name");
 }
 
-int Customer::searchDB(sqlite3_stmt*& stmt, const char* field, const char* table) const{
+list<Purchase>* Customer::addPurchase(Service service, double price, Date startDate, Date endDate){
+    ostringstream sqlCmmd;
+    sqlCmmd << "INSERT INTO ics_purchases (p_customer, p_service, p_price, p_start_date, p_end_date) VALUES ('"
+            << name.toStdString() << "', "
+            << service << ", "
+            << price << ", '"
+            << startDate.toString().toStdString() << "', '"
+            << endDate.toString().toStdString() << "')";
+    
+    char* errMsg;
+    sqlite3_exec(db, sqlCmmd.str().c_str(), NULL, 0, &errMsg);
+    if(errMsg != NULL){
+        cerr << errMsg;
+    }
+    
+    return getPurchases();
+}
+
+sqlite3_stmt* Customer::searchDB(const char* field, const char* table, const char* primaryKey) const{
     ostringstream sqlCmmd;
     sqlCmmd << "SELECT "
             << field
             << " FROM "
             << table
-            << " WHERE c_name='"
+            << " WHERE "
+            << primaryKey 
+            << "='"
             << name.toStdString()
             << "';";
+    
+    sqlite3_stmt* stmt;
 
     int rc = sqlite3_prepare_v2(db, sqlCmmd.str().c_str(), -1, &stmt, NULL);
     
     rc = sqlite3_step(stmt);
     
-    return rc;
+    return stmt;
 }
 
 template<typename T>

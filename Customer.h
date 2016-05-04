@@ -15,8 +15,9 @@
 #define CUSTOMER_H
 
 #include <iostream>
+#include <list>
 #include "sqlite3.h"
-#include "Address.h"
+#include "Purchase.h"
 
 enum Interest{NOT_INTERESTED, SOMEWHAT_INTERESTED, VERY_INTERESTED, INVALID_VALUE};
 
@@ -24,20 +25,25 @@ class Customer{
 private:
     sqlite3* db;
     QString name;
-    Address address;
     
-    int searchDB(sqlite3_stmt*& stmt, const char* field, const char* table) const;
-    template<typename T> void updateField(const char* field, T value, const char* table, const char* primaryKey);
+    sqlite3_stmt* searchDB(const char* field, const char* table, const char* primaryKey) const;
+    
+    template<typename T> 
+    void updateField(const char* field, T value, const char* table, const char* primaryKey);
     
 public:
     Customer(sqlite3* db, QString name);
     
     QString getName() const;
-    QString getAddress() const;
-    Address getAddressObject() const;
+    QString getStreetAddress() const;
+    QString getCity() const;
+    QString getState() const;
+    QString getZip() const;
     Interest getInterest() const;
     bool isKey() const;
+    list<Purchase>* getPurchases() const;
     QString toString() const;
+    
     
     void setName(QString name);
     void setStreetAddress(QString streetAddress);
@@ -46,6 +52,7 @@ public:
     void setZip(QString zip);
     void setInterest(Interest interest);
     void setIsKey(bool isKey);
+    list<Purchase>* addPurchase(Service service, double price, Date startDate, Date endDate);
 };
 
 
