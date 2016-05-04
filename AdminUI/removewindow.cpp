@@ -15,7 +15,7 @@ RemoveWindow::~RemoveWindow()
 
 void RemoveWindow::on_ConformBox_accepted()
 {
-
+    hide(); // For now...
 }
 
 void RemoveWindow::on_ConformBox_rejected()

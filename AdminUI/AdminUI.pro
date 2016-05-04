@@ -16,14 +16,17 @@ SOURCES += main.cpp\
         customerlist.cpp \
     customerinfo.cpp \
     addcustomerwindow.cpp \
-    removewindow.cpp
+    removewindow.cpp \
+    errorwindow.cpp
 
 HEADERS  += customerlist.h \
     customerinfo.h \
     addcustomerwindow.h \
-    removewindow.h
+    removewindow.h \
+    errorwindow.h
 
 FORMS    += customerlist.ui \
     customerinfo.ui \
     addcustomerwindow.ui \
-    removewindow.ui
+    removewindow.ui \
+    errorwindow.ui

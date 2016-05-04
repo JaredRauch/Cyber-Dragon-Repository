@@ -37,11 +37,15 @@ void CustomerList::on_AddButton_clicked()
 
 void CustomerList::on_CustomerWidget_cellClicked(int row, int column)
 {
+    int hide_annoying_warning;
+
     ui->CustomerWidget->selectRow(row);
 
     ui->InfoButton->setEnabled(true);
 
     ui->RemoveButton->setEnabled(true);
+
+    hide_annoying_warning = column;
 }
 
 
