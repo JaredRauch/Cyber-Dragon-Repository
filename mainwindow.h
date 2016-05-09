@@ -2,11 +2,6 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "salespitch.h"
-#include "conceptofoperations.h"
-#include "serviceoptions.h"
-#include "maintenanceplan.h"
-#include "guarantee.h"
 #include "customertestimonials.h"
 #include "requestpamphlet.h"
 #include "orderproduct.h"
@@ -25,15 +20,7 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_actionSales_Pitch_triggered();
 
-    void on_actionConcept_of_operations_triggered();
-
-    void on_actionService_options_triggered();
-
-    void on_actionMaintenance_plan_triggered();
-
-    void on_actionGuarantee_Policy_triggered();
 
     void on_actionCustomer_Testimonials_triggered();
 
@@ -47,11 +34,6 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    SalesPitch *salespitch;
-    ConceptOfOperations *conceptofoperations;
-    ServiceOptions *serviceoptions;
-    MaintenancePlan *maintenanceplan;
-    Guarantee *guarantee;
     CustomerTestimonials *customertestimonials;
     RequestPamphlet *requestpamphlet;
     OrderProduct *orderproduct;

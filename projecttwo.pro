@@ -21,11 +21,6 @@ SOURCES += main.cpp\
     Testimonial.cpp \
     sqlite3.c \
     dialog.cpp \
-    salespitch.cpp \
-    conceptofoperations.cpp \
-    serviceoptions.cpp \
-    maintenanceplan.cpp \
-    guarantee.cpp \
     customertestimonials.cpp \
     requestpamphlet.cpp \
     orderproduct.cpp \
@@ -47,11 +42,6 @@ HEADERS  += mainwindow.h \
     sqlite3.h \
     Testimonial.h \
     dialog.h \
-    salespitch.h \
-    conceptofoperations.h \
-    serviceoptions.h \
-    maintenanceplan.h \
-    guarantee.h \
     customertestimonials.h \
     requestpamphlet.h \
     orderproduct.h \
@@ -66,11 +56,7 @@ HEADERS  += mainwindow.h \
 
 FORMS    += mainwindow.ui \
     dialog.ui \
-    salespitch.ui \
-    conceptofoperations.ui \
-    serviceoptions.ui \
     maintenanceplan.ui \
-    guarantee.ui \
     customertestimonials.ui \
     requestpamphlet.ui \
     orderproduct.ui \
