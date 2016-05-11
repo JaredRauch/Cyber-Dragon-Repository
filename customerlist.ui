@@ -36,7 +36,12 @@
     </column>
     <column>
      <property name="text">
-      <string>Product bought</string>
+      <string>Interest Level</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Key</string>
      </property>
     </column>
    </widget>

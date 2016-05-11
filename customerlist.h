@@ -2,8 +2,10 @@
 #define CUSTOMERLIST_H
 
 #include <QMainWindow>
+#include <iterator>
 #include "addcustomerwindow.h"
 #include "customerinfo.h"
+#include "Database.h"
 
 namespace Ui {
 class CustomerList;
@@ -14,7 +16,7 @@ class CustomerList : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit CustomerList(QWidget *parent = 0);
+    explicit CustomerList(QMap<QString, Customer>* customerMap, QWidget *parent = 0);
     ~CustomerList();
 
 private slots:
@@ -27,7 +29,7 @@ private slots:
 private:
     Ui::CustomerList *ui;
 
-    int requests;
+    QMap<QString, Customer>* customerMap;
 };
 
 #endif // CUSTOMERLIST_H

@@ -48,12 +48,14 @@ public:
         centralWidget = new QWidget(CustomerList);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         CustomerWidget = new QTableWidget(centralWidget);
-        if (CustomerWidget->columnCount() < 2)
-            CustomerWidget->setColumnCount(2);
+        if (CustomerWidget->columnCount() < 3)
+            CustomerWidget->setColumnCount(3);
         QTableWidgetItem *__qtablewidgetitem = new QTableWidgetItem();
         CustomerWidget->setHorizontalHeaderItem(0, __qtablewidgetitem);
         QTableWidgetItem *__qtablewidgetitem1 = new QTableWidgetItem();
         CustomerWidget->setHorizontalHeaderItem(1, __qtablewidgetitem1);
+        QTableWidgetItem *__qtablewidgetitem2 = new QTableWidgetItem();
+        CustomerWidget->setHorizontalHeaderItem(2, __qtablewidgetitem2);
         CustomerWidget->setObjectName(QStringLiteral("CustomerWidget"));
         CustomerWidget->setGeometry(QRect(10, 10, 1091, 491));
         CustomerWidget->setRowCount(0);
@@ -112,7 +114,9 @@ public:
         QTableWidgetItem *___qtablewidgetitem = CustomerWidget->horizontalHeaderItem(0);
         ___qtablewidgetitem->setText(QApplication::translate("CustomerList", "Customer", 0));
         QTableWidgetItem *___qtablewidgetitem1 = CustomerWidget->horizontalHeaderItem(1);
-        ___qtablewidgetitem1->setText(QApplication::translate("CustomerList", "Product bought", 0));
+        ___qtablewidgetitem1->setText(QApplication::translate("CustomerList", "Interest Level", 0));
+        QTableWidgetItem *___qtablewidgetitem2 = CustomerWidget->horizontalHeaderItem(2);
+        ___qtablewidgetitem2->setText(QApplication::translate("CustomerList", "Key", 0));
         AddButton->setText(QApplication::translate("CustomerList", "Add", 0));
         InfoButton->setText(QApplication::translate("CustomerList", "Information", 0));
         EditButton->setText(QApplication::translate("CustomerList", "Remove by Name", 0));

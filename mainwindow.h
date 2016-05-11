@@ -5,7 +5,8 @@
 #include "customertestimonials.h"
 #include "requestpamphlet.h"
 #include "orderproduct.h"
-#include "database.h"
+#include "Database.h"
+#include "customerlist.h"
 
 namespace Ui {
 class MainWindow;
@@ -21,16 +22,15 @@ public:
 
 private slots:
 
-
-    void on_actionCustomer_Testimonials_triggered();
-
-    void on_actionRequest_Pamphlet_triggered();
-
-    void on_actionOrder_Products_triggered();
-
     void on_pushButton_clicked();
 
     void on_pushButton_logout_clicked();
+
+    void on_pushButton_order_clicked();
+
+    void on_pushButton_testimonials_clicked();
+
+    void on_pushButton_requestpamplet_clicked();
 
 private:
     Ui::MainWindow *ui;
@@ -38,9 +38,10 @@ private:
     RequestPamphlet *requestpamphlet;
     OrderProduct *orderproduct;
 
-    Database *db;
-
-
+    Database* db;
+    QMap<QString, Customer>* customerMap;
+    QSet<Testimonial>* set;
+    Customer* customer;
 };
 
 #endif // MAINWINDOW_H

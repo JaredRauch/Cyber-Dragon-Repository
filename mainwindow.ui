@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1144</width>
-    <height>664</height>
+    <width>1147</width>
+    <height>672</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -23,6 +23,12 @@
       <height>111</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
     <property name="title">
      <string>Login</string>
     </property>
@@ -34,6 +40,12 @@
        <width>121</width>
        <height>31</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
      </property>
      <property name="text">
       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ff0000;&quot;&gt;*Invalid Credentials&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -74,13 +86,23 @@
       </item>
       <item row="1" column="0">
        <widget class="QLabel" name="label_password">
+        <property name="font">
+         <font>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
         <property name="text">
          <string>Password:</string>
         </property>
        </widget>
       </item>
       <item row="1" column="1">
-       <widget class="QLineEdit" name="lineEdit_password"/>
+       <widget class="QLineEdit" name="lineEdit_password">
+        <property name="echoMode">
+         <enum>QLineEdit::Password</enum>
+        </property>
+       </widget>
       </item>
      </layout>
     </widget>
@@ -98,25 +120,25 @@
      <string>Logout</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label">
+   <widget class="QLabel" name="label_title">
     <property name="geometry">
      <rect>
-      <x>280</x>
-      <y>-10</y>
+      <x>250</x>
+      <y>10</y>
       <width>491</width>
-      <height>91</height>
+      <height>61</height>
      </rect>
     </property>
     <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:28pt;&quot;&gt;iCyberSecurity&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:28pt;&quot;&gt;ICyberSecurity&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="Line" name="line">
     <property name="geometry">
      <rect>
-      <x>380</x>
+      <x>330</x>
       <y>60</y>
-      <width>291</width>
+      <width>391</width>
       <height>21</height>
      </rect>
     </property>
@@ -124,13 +146,13 @@
      <enum>QFrame::Plain</enum>
     </property>
     <property name="lineWidth">
-     <number>2</number>
+     <number>3</number>
     </property>
     <property name="orientation">
      <enum>Qt::Horizontal</enum>
     </property>
    </widget>
-   <widget class="QLabel" name="label_2">
+   <widget class="QLabel" name="label_info">
     <property name="geometry">
      <rect>
       <x>140</x>
@@ -174,7 +196,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;CyberDragons employs a team of 5 security professionals with unique perspectives and areas of experience. With years of experience and research, CyberDragons offers preventative diagnostics services to help your company maintain the integrity of its commitment to customer data security. CyberDragons has relationships with hardware vendors to help obtain the most guaranteed secure firewalls, access badges, server hardware, and security cameras. We provide proven techniques to maintain total onsite physical security, while maintaining continuous access monitoring through your cloud. &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_3">
+   <widget class="QLabel" name="label_gaurantee">
     <property name="geometry">
      <rect>
       <x>140</x>
@@ -211,11 +233,9 @@ p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;iCyberSecurity: CyberDragons guarantees that our services will be carried out to the highest quality and will refund for any justifiably subpar service. &lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;Threat prevention can fail for a number of reasons, in technology disruptions and yet undiscovered, fundamental problems with any of a variety of components. CyberDragons will never be responsible for the failures of other parties software problems, but it will carefully document its process, and will financially compensate clients if a failure is demonstrably ours. &lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;This assures our clients that we share in their risk, &lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;taking threats as seriously as they do. &lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;It's our task to make your adversaries&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt; our adversaries. &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;Threat prevention can fail for a number of reasons, in technology disruptions and yet undiscovered, fundamental problems with any of a variety of components. CyberDragons will never be responsible for the failures of other parties software problems, but it will carefully document its process, and will financially compensate clients if a failure is demonstrably ours. This assures our clients that we share in their risk, taking threats as seriously as they do. &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;It's our task to make your adversaries &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;our adversaries. &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QTextBrowser" name="textBrowser_3">
@@ -242,7 +262,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;Price range: $2,000-$4,500 per person&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_4">
+   <widget class="QLabel" name="label_serviceopt">
     <property name="geometry">
      <rect>
       <x>700</x>
@@ -267,7 +287,7 @@ p, li { white-space: pre-wrap; }
     <property name="geometry">
      <rect>
       <x>480</x>
-      <y>380</y>
+      <y>390</y>
       <width>621</width>
       <height>181</height>
      </rect>
@@ -288,11 +308,11 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;Price $1,500/person&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_5">
+   <widget class="QLabel" name="label_maintenance">
     <property name="geometry">
      <rect>
       <x>680</x>
-      <y>340</y>
+      <y>350</y>
       <width>231</width>
       <height>31</height>
      </rect>
@@ -306,56 +326,142 @@ p, li { white-space: pre-wrap; }
      </font>
     </property>
     <property name="text">
-     <string>Maintanance Plan</string>
+     <string>Maintenance Plan</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="pushButton_order">
     <property name="geometry">
      <rect>
       <x>910</x>
-      <y>570</y>
+      <y>580</y>
       <width>171</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
     </property>
     <property name="text">
      <string>Order Now!</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_3">
+   <widget class="QPushButton" name="pushButton_requestpamplet">
     <property name="geometry">
      <rect>
       <x>500</x>
-      <y>570</y>
+      <y>580</y>
       <width>171</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
     </property>
     <property name="text">
      <string>Request Pamphlet</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="pushButton_testimonials">
+    <property name="geometry">
+     <rect>
+      <x>700</x>
+      <y>580</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Testimonials</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="dragonpic">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>-40</y>
+      <width>211</width>
+      <height>151</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="Resources.qrc">:/assets/assets/drag.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="gaurantee">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>520</y>
+      <width>111</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="Resources.qrc">:/assets/assets/Guarantee.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_company">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>0</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Cyber Dragons&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
    <zorder>pushButton_logout</zorder>
-   <zorder>label</zorder>
+   <zorder>label_title</zorder>
    <zorder>line</zorder>
-   <zorder>label_2</zorder>
+   <zorder>label_info</zorder>
    <zorder>textBrowser</zorder>
-   <zorder>label_3</zorder>
+   <zorder>label_gaurantee</zorder>
    <zorder>textBrowser_2</zorder>
    <zorder>textBrowser_3</zorder>
-   <zorder>label_4</zorder>
+   <zorder>label_serviceopt</zorder>
    <zorder>textBrowser_4</zorder>
-   <zorder>label_5</zorder>
+   <zorder>label_maintenance</zorder>
    <zorder>groupBox</zorder>
-   <zorder>pushButton_2</zorder>
-   <zorder>pushButton_3</zorder>
+   <zorder>pushButton_order</zorder>
+   <zorder>pushButton_requestpamplet</zorder>
+   <zorder>pushButton_testimonials</zorder>
+   <zorder>dragonpic</zorder>
+   <zorder>gaurantee</zorder>
+   <zorder>label_company</zorder>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1144</width>
+     <width>1147</width>
      <height>21</height>
     </rect>
    </property>
@@ -364,16 +470,7 @@ p, li { white-space: pre-wrap; }
      <string>File</string>
     </property>
    </widget>
-   <widget class="QMenu" name="menuCustomer">
-    <property name="title">
-     <string>Customer</string>
-    </property>
-    <addaction name="actionCustomer_Testimonials"/>
-    <addaction name="actionRequest_Pamphlet"/>
-    <addaction name="actionOrder_Products"/>
-   </widget>
    <addaction name="menuFile"/>
-   <addaction name="menuCustomer"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
@@ -384,23 +481,27 @@ p, li { white-space: pre-wrap; }
    </attribute>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
-  <action name="actionCustomer_Testimonials">
-   <property name="text">
-    <string>Customer Testimonials</string>
-   </property>
-  </action>
-  <action name="actionRequest_Pamphlet">
-   <property name="text">
-    <string>Request Pamphlet</string>
-   </property>
-  </action>
-  <action name="actionOrder_Products">
-   <property name="text">
-    <string>Order Products</string>
-   </property>
-  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources/>
- <connections/>
+ <resources>
+  <include location="Resources.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>lineEdit_password</sender>
+   <signal>returnPressed()</signal>
+   <receiver>pushButton</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1025</x>
+     <y>88</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1069</x>
+     <y>127</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

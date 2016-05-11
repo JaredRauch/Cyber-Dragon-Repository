@@ -6,6 +6,7 @@
 #include <QMap>
 #include <QSet>
 #include <exception>
+#include <QDebug>
 #include "Customer.h"
 #include "Testimonial.h"
 #include "sha1.h"
@@ -18,7 +19,7 @@ private:
     
 public:
     InvalidLoginException(const char* text){ex = text;}
-    virtual ~InvalidLoginException() throw(){};
+    virtual ~InvalidLoginException() throw(){}
     
     virtual const char* what() const throw(){
         return ex;
@@ -37,8 +38,8 @@ public:
     Database(QString databaseName);
     ~Database();
     
-    void loginAsCustomer(QString username, QString password, Customer*& customer, Testimonial*& testimonial);
-    void loginAsAdmin(QString username, QString password, QMap<QString, Customer>*& customerMap, QSet<Testimonial>*& testimonials);
+    Customer* loginAsCustomer(QString username, QString password);
+    QMap<QString, Customer>* loginAsAdmin(QString username, QString password);
     
     void registerCustomer(QString username, QString password);
     void registerAdmin(QString username, QString password);

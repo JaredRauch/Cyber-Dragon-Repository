@@ -1,5 +1,6 @@
 
 #include "Database.h"
+#include <QDebug>
 
 Database::Database(QString databaseName){
     sqlite3_open(databaseName.toStdString().c_str(), &connection);
@@ -9,25 +10,26 @@ Database::~Database(){
     sqlite3_close(connection);
 }
 
-void Database::loginAsCustomer(QString username, QString password, Customer*& customer, Testimonial*& testimonial){
+Customer* Database::loginAsCustomer(QString username, QString password){
     unsigned* digest = encryptPassword(password);
+    Customer* customer;
     
     if(validateCustomerLogin(username, digest)){
         customer = new Customer(connection, username.toStdString().c_str());
-        testimonial = new Testimonial(connection, username);
     }
     else{
         ostringstream ex;
         ex << "Invalid login by " << username.toStdString();
         throw new InvalidLoginException(ex.str().c_str());
     }
+
+    return customer;
 }
 
-void Database::loginAsAdmin(QString username, QString password, QMap<QString, Customer>*& customerMap, QSet<Testimonial>*& testimonials){
+QMap<QString, Customer>* Database::loginAsAdmin(QString username, QString password){
     unsigned* digest = encryptPassword(password);
-    customerMap = new QMap<QString, Customer>();
-    testimonials = new QSet<Testimonial>();
-    
+    QMap<QString, Customer>* customerMap = new QMap<QString, Customer>();
+
     if(validateAdminLogin(username, digest)){
         sqlite3_stmt* stmt;
         int rc = sqlite3_prepare_v2(connection, "SELECT c_name FROM ics_customers", -1, &stmt, NULL); 
@@ -37,8 +39,7 @@ void Database::loginAsAdmin(QString username, QString password, QMap<QString, Cu
             QString name = QString(static_cast<const char*>(sqlite3_column_blob(stmt, 0)));
 
             customerMap->insert(name, Customer(connection, name));
-//            testimonials->insert(Testimonial(connection, name));
-            
+
             rc = sqlite3_step(stmt);
         }
     }
@@ -47,6 +48,8 @@ void Database::loginAsAdmin(QString username, QString password, QMap<QString, Cu
         ex << "Invalid login by " << username.toStdString();
         throw new InvalidLoginException(ex.str().c_str());
     }
+
+    return customerMap;
 }
 
 void Database::AddCustomer(QString  name, 
@@ -134,7 +137,7 @@ bool Database::validateAdminLogin(QString username, unsigned* digest) const{
     sqlite3_stmt* stmt;
     int rc = sqlite3_prepare_v2(connection, sqlCmmd.str().c_str(), -1, &stmt, NULL);
     sqlite3_step(stmt);
-    
+
     return sqlite3_column_int(stmt, 0) == 1;
 }
 

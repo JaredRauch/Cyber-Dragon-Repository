@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include <QFontDatabase>
 #include <QDebug>
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -10,11 +11,15 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->label_validation->setVisible(false);
     ui->pushButton_logout->setVisible(false);
 
+    //Sets font style
+    int id = QFontDatabase::addApplicationFont(":/assets/assets/Cyberfall.otf");
+    QString family = QFontDatabase::applicationFontFamilies(id).at(0);
+    QFont cyberfall(family);
+    ui->label_title->setFont(cyberfall);
+    ui->label_company->setFont(cyberfall);
 
-    Database* db = new Database("iCyberSecurity.sqlite");
-    QMap<QString, Customer>* map;
-    QSet<Testimonial>* set;
-    db->loginAsAdmin("admin", "pass", map, set);
+    //Create DB.
+    db = new Database("iCyberSecurity.sqlite");
 }
 
 MainWindow::~MainWindow()
@@ -22,56 +27,34 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::on_actionCustomer_Testimonials_triggered()
-{
-    customertestimonials = new CustomerTestimonials(this);
-    customertestimonials->show();
-}
-
-void MainWindow::on_actionRequest_Pamphlet_triggered()
-{
-    requestpamphlet = new RequestPamphlet(this);
-    requestpamphlet->show();
-}
-
-void MainWindow::on_actionOrder_Products_triggered()
-{
-    orderproduct = new OrderProduct(this);
-    orderproduct->show();
-}
-
-
 //Basic login for testing with validation
 //Idea being once logged in, hide the login box and show account details panel in its place
 void MainWindow::on_pushButton_clicked()
 {
-    //Customer customer();
-    //Testimonial testimonial();
-
-    //Customer * ptrCustomer = &customer;
-    //Testimonial * ptrTestimonial = &testimonial;
-
-    Customer* customer;
-    Testimonial* testimonial;
-
-
     QString username;
     QString password;
 
-    QString testUser = "admin";
-    QString testPass = "12345";
+    username = ui->lineEdit_username->text();
+    password = ui->lineEdit_password->text();
+    bool success;
 
-   username = ui->lineEdit_username->text();
-   password = ui->lineEdit_password->text();
+   try{
+       customerMap = db->loginAsAdmin(username, password);
+       success = true;
+       //Launch customerList.cpp
+   }
+   catch(InvalidLoginException ile){
+       //Tell them their login failed.
+        success = false;
+   }
 
-
-
-
-
-
-   if(username != testUser || password != testPass)
+   if(success)
    {
        ui->label_validation->setVisible(true);
+
+       CustomerList *adminUI = new CustomerList(customerMap);
+
+       adminUI->show();
    }
    else
    {
@@ -90,4 +73,22 @@ void MainWindow::on_pushButton_logout_clicked()
     ui->groupBox->setVisible(true);
     ui->pushButton_logout->setVisible(false);
 
+}
+
+void MainWindow::on_pushButton_order_clicked()
+{
+    orderproduct = new OrderProduct(this);
+    orderproduct->show();
+}
+
+void MainWindow::on_pushButton_testimonials_clicked()
+{
+    customertestimonials = new CustomerTestimonials(this);
+    customertestimonials->show();
+}
+
+void MainWindow::on_pushButton_requestpamplet_clicked()
+{
+    requestpamphlet = new RequestPamphlet(this);
+    requestpamphlet->show();
 }

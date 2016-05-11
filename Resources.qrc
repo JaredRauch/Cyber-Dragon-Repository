@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/assets">
+        <file>assets/Cyberfall.otf</file>
+        <file>assets/drag.png</file>
+        <file>assets/Guarantee.png</file>
+    </qresource>
+</RCC>

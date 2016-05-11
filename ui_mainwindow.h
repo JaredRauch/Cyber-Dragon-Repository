@@ -33,9 +33,6 @@ QT_BEGIN_NAMESPACE
 class Ui_MainWindow
 {
 public:
-    QAction *actionCustomer_Testimonials;
-    QAction *actionRequest_Pamphlet;
-    QAction *actionOrder_Products;
     QWidget *centralWidget;
     QGroupBox *groupBox;
     QLabel *label_validation;
@@ -47,21 +44,24 @@ public:
     QLabel *label_password;
     QLineEdit *lineEdit_password;
     QPushButton *pushButton_logout;
-    QLabel *label;
+    QLabel *label_title;
     QFrame *line;
-    QLabel *label_2;
+    QLabel *label_info;
     QTextBrowser *textBrowser;
-    QLabel *label_3;
+    QLabel *label_gaurantee;
     QTextBrowser *textBrowser_2;
     QTextBrowser *textBrowser_3;
-    QLabel *label_4;
+    QLabel *label_serviceopt;
     QTextBrowser *textBrowser_4;
-    QLabel *label_5;
-    QPushButton *pushButton_2;
-    QPushButton *pushButton_3;
+    QLabel *label_maintenance;
+    QPushButton *pushButton_order;
+    QPushButton *pushButton_requestpamplet;
+    QPushButton *pushButton_testimonials;
+    QLabel *dragonpic;
+    QLabel *gaurantee;
+    QLabel *label_company;
     QMenuBar *menuBar;
     QMenu *menuFile;
-    QMenu *menuCustomer;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
 
@@ -69,21 +69,23 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(1144, 664);
-        actionCustomer_Testimonials = new QAction(MainWindow);
-        actionCustomer_Testimonials->setObjectName(QStringLiteral("actionCustomer_Testimonials"));
-        actionRequest_Pamphlet = new QAction(MainWindow);
-        actionRequest_Pamphlet->setObjectName(QStringLiteral("actionRequest_Pamphlet"));
-        actionOrder_Products = new QAction(MainWindow);
-        actionOrder_Products->setObjectName(QStringLiteral("actionOrder_Products"));
+        MainWindow->resize(1147, 672);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         groupBox = new QGroupBox(centralWidget);
         groupBox->setObjectName(QStringLiteral("groupBox"));
         groupBox->setGeometry(QRect(900, 0, 231, 111));
+        QFont font;
+        font.setBold(true);
+        font.setWeight(75);
+        groupBox->setFont(font);
         label_validation = new QLabel(groupBox);
         label_validation->setObjectName(QStringLiteral("label_validation"));
         label_validation->setGeometry(QRect(20, 80, 121, 31));
+        QFont font1;
+        font1.setBold(false);
+        font1.setWeight(50);
+        label_validation->setFont(font1);
         pushButton = new QPushButton(groupBox);
         pushButton->setObjectName(QStringLiteral("pushButton"));
         pushButton->setGeometry(QRect(140, 80, 81, 21));
@@ -107,87 +109,110 @@ public:
 
         label_password = new QLabel(layoutWidget);
         label_password->setObjectName(QStringLiteral("label_password"));
+        label_password->setFont(font);
 
         formLayout->setWidget(1, QFormLayout::LabelRole, label_password);
 
         lineEdit_password = new QLineEdit(layoutWidget);
         lineEdit_password->setObjectName(QStringLiteral("lineEdit_password"));
+        lineEdit_password->setEchoMode(QLineEdit::Password);
 
         formLayout->setWidget(1, QFormLayout::FieldRole, lineEdit_password);
 
         pushButton_logout = new QPushButton(centralWidget);
         pushButton_logout->setObjectName(QStringLiteral("pushButton_logout"));
         pushButton_logout->setGeometry(QRect(1040, 80, 81, 23));
-        label = new QLabel(centralWidget);
-        label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(280, -10, 491, 91));
+        label_title = new QLabel(centralWidget);
+        label_title->setObjectName(QStringLiteral("label_title"));
+        label_title->setGeometry(QRect(250, 10, 491, 61));
         line = new QFrame(centralWidget);
         line->setObjectName(QStringLiteral("line"));
-        line->setGeometry(QRect(380, 60, 291, 21));
+        line->setGeometry(QRect(330, 60, 391, 21));
         line->setFrameShadow(QFrame::Plain);
-        line->setLineWidth(2);
+        line->setLineWidth(3);
         line->setFrameShape(QFrame::HLine);
-        label_2 = new QLabel(centralWidget);
-        label_2->setObjectName(QStringLiteral("label_2"));
-        label_2->setGeometry(QRect(140, 70, 151, 31));
-        QFont font;
-        font.setPointSize(18);
-        font.setBold(false);
-        font.setUnderline(true);
-        font.setWeight(50);
-        label_2->setFont(font);
+        label_info = new QLabel(centralWidget);
+        label_info->setObjectName(QStringLiteral("label_info"));
+        label_info->setGeometry(QRect(140, 70, 151, 31));
+        QFont font2;
+        font2.setPointSize(18);
+        font2.setBold(false);
+        font2.setUnderline(true);
+        font2.setWeight(50);
+        label_info->setFont(font2);
         textBrowser = new QTextBrowser(centralWidget);
         textBrowser->setObjectName(QStringLiteral("textBrowser"));
         textBrowser->setGeometry(QRect(10, 110, 441, 251));
-        label_3 = new QLabel(centralWidget);
-        label_3->setObjectName(QStringLiteral("label_3"));
-        label_3->setGeometry(QRect(140, 370, 151, 31));
-        label_3->setFont(font);
+        label_gaurantee = new QLabel(centralWidget);
+        label_gaurantee->setObjectName(QStringLiteral("label_gaurantee"));
+        label_gaurantee->setGeometry(QRect(140, 370, 151, 31));
+        label_gaurantee->setFont(font2);
         textBrowser_2 = new QTextBrowser(centralWidget);
         textBrowser_2->setObjectName(QStringLiteral("textBrowser_2"));
         textBrowser_2->setGeometry(QRect(20, 410, 421, 181));
         textBrowser_3 = new QTextBrowser(centralWidget);
         textBrowser_3->setObjectName(QStringLiteral("textBrowser_3"));
         textBrowser_3->setGeometry(QRect(480, 120, 621, 221));
-        label_4 = new QLabel(centralWidget);
-        label_4->setObjectName(QStringLiteral("label_4"));
-        label_4->setGeometry(QRect(700, 80, 181, 31));
-        label_4->setFont(font);
+        label_serviceopt = new QLabel(centralWidget);
+        label_serviceopt->setObjectName(QStringLiteral("label_serviceopt"));
+        label_serviceopt->setGeometry(QRect(700, 80, 181, 31));
+        label_serviceopt->setFont(font2);
         textBrowser_4 = new QTextBrowser(centralWidget);
         textBrowser_4->setObjectName(QStringLiteral("textBrowser_4"));
-        textBrowser_4->setGeometry(QRect(480, 380, 621, 181));
-        label_5 = new QLabel(centralWidget);
-        label_5->setObjectName(QStringLiteral("label_5"));
-        label_5->setGeometry(QRect(680, 340, 231, 31));
-        label_5->setFont(font);
-        pushButton_2 = new QPushButton(centralWidget);
-        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
-        pushButton_2->setGeometry(QRect(910, 570, 171, 31));
-        pushButton_3 = new QPushButton(centralWidget);
-        pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
-        pushButton_3->setGeometry(QRect(500, 570, 171, 31));
+        textBrowser_4->setGeometry(QRect(480, 390, 621, 181));
+        label_maintenance = new QLabel(centralWidget);
+        label_maintenance->setObjectName(QStringLiteral("label_maintenance"));
+        label_maintenance->setGeometry(QRect(680, 350, 231, 31));
+        label_maintenance->setFont(font2);
+        pushButton_order = new QPushButton(centralWidget);
+        pushButton_order->setObjectName(QStringLiteral("pushButton_order"));
+        pushButton_order->setGeometry(QRect(910, 580, 171, 31));
+        pushButton_order->setFont(font);
+        pushButton_requestpamplet = new QPushButton(centralWidget);
+        pushButton_requestpamplet->setObjectName(QStringLiteral("pushButton_requestpamplet"));
+        pushButton_requestpamplet->setGeometry(QRect(500, 580, 171, 31));
+        pushButton_requestpamplet->setFont(font);
+        pushButton_testimonials = new QPushButton(centralWidget);
+        pushButton_testimonials->setObjectName(QStringLiteral("pushButton_testimonials"));
+        pushButton_testimonials->setGeometry(QRect(700, 580, 171, 31));
+        pushButton_testimonials->setFont(font);
+        dragonpic = new QLabel(centralWidget);
+        dragonpic->setObjectName(QStringLiteral("dragonpic"));
+        dragonpic->setGeometry(QRect(590, -40, 211, 151));
+        dragonpic->setPixmap(QPixmap(QString::fromUtf8(":/assets/assets/drag.png")));
+        dragonpic->setScaledContents(true);
+        gaurantee = new QLabel(centralWidget);
+        gaurantee->setObjectName(QStringLiteral("gaurantee"));
+        gaurantee->setGeometry(QRect(320, 520, 111, 91));
+        gaurantee->setPixmap(QPixmap(QString::fromUtf8(":/assets/assets/Guarantee.png")));
+        gaurantee->setScaledContents(true);
+        label_company = new QLabel(centralWidget);
+        label_company->setObjectName(QStringLiteral("label_company"));
+        label_company->setGeometry(QRect(10, 0, 171, 31));
         MainWindow->setCentralWidget(centralWidget);
         pushButton_logout->raise();
-        label->raise();
+        label_title->raise();
         line->raise();
-        label_2->raise();
+        label_info->raise();
         textBrowser->raise();
-        label_3->raise();
+        label_gaurantee->raise();
         textBrowser_2->raise();
         textBrowser_3->raise();
-        label_4->raise();
+        label_serviceopt->raise();
         textBrowser_4->raise();
-        label_5->raise();
+        label_maintenance->raise();
         groupBox->raise();
-        pushButton_2->raise();
-        pushButton_3->raise();
+        pushButton_order->raise();
+        pushButton_requestpamplet->raise();
+        pushButton_testimonials->raise();
+        dragonpic->raise();
+        gaurantee->raise();
+        label_company->raise();
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 1144, 21));
+        menuBar->setGeometry(QRect(0, 0, 1147, 21));
         menuFile = new QMenu(menuBar);
         menuFile->setObjectName(QStringLiteral("menuFile"));
-        menuCustomer = new QMenu(menuBar);
-        menuCustomer->setObjectName(QStringLiteral("menuCustomer"));
         MainWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
@@ -197,12 +222,9 @@ public:
         MainWindow->setStatusBar(statusBar);
 
         menuBar->addAction(menuFile->menuAction());
-        menuBar->addAction(menuCustomer->menuAction());
-        menuCustomer->addAction(actionCustomer_Testimonials);
-        menuCustomer->addAction(actionRequest_Pamphlet);
-        menuCustomer->addAction(actionOrder_Products);
 
         retranslateUi(MainWindow);
+        QObject::connect(lineEdit_password, SIGNAL(returnPressed()), pushButton, SLOT(click()));
 
         QMetaObject::connectSlotsByName(MainWindow);
     } // setupUi
@@ -210,17 +232,14 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", 0));
-        actionCustomer_Testimonials->setText(QApplication::translate("MainWindow", "Customer Testimonials", 0));
-        actionRequest_Pamphlet->setText(QApplication::translate("MainWindow", "Request Pamphlet", 0));
-        actionOrder_Products->setText(QApplication::translate("MainWindow", "Order Products", 0));
         groupBox->setTitle(QApplication::translate("MainWindow", "Login", 0));
         label_validation->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" color:#ff0000;\">*Invalid Credentials</span></p></body></html>", 0));
         pushButton->setText(QApplication::translate("MainWindow", "Login", 0));
         label_username->setText(QApplication::translate("MainWindow", "Username: ", 0));
         label_password->setText(QApplication::translate("MainWindow", "Password:", 0));
         pushButton_logout->setText(QApplication::translate("MainWindow", "Logout", 0));
-        label->setText(QApplication::translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:28pt;\">iCyberSecurity</span></p></body></html>", 0));
-        label_2->setText(QApplication::translate("MainWindow", "Information", 0));
+        label_title->setText(QApplication::translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:28pt;\">ICyberSecurity</span></p></body></html>", 0));
+        label_info->setText(QApplication::translate("MainWindow", "Information", 0));
         textBrowser->setHtml(QApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
@@ -234,7 +253,7 @@ public:
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\"><br /></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:8pt;\">CyberDragons employs a team of 5"
                         " security professionals with unique perspectives and areas of experience. With years of experience and research, CyberDragons offers preventative diagnostics services to help your company maintain the integrity of its commitment to customer data security. CyberDragons has relationships with hardware vendors to help obtain the most guaranteed secure firewalls, access badges, server hardware, and security cameras. We provide proven techniques to maintain total onsite physical security, while maintaining continuous access monitoring through your cloud. </span></p></body></html>", 0));
-        label_3->setText(QApplication::translate("MainWindow", "Gaurantee", 0));
+        label_gaurantee->setText(QApplication::translate("MainWindow", "Gaurantee", 0));
         textBrowser_2->setHtml(QApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
@@ -242,12 +261,9 @@ public:
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:8pt;\">iCyberSecurity: CyberDragons guarantees that our services will be carried out to the highest quality and will refund for any justifiably subpar service. </span></p>\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\"><br /></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:8pt;\">Threat prevention can fail for"
-                        " a number of reasons, in technology disruptions and yet undiscovered, fundamental problems with any of a variety of components. CyberDragons will never be responsible for the failures of other parties software problems, but it will carefully document its process, and will financially compensate clients if a failure is demonstrably ours. </span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:8pt;\">This assures our clients that we share in their risk, </span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:8pt;\">taking threats as seriously as they do. </span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:8pt;\">It's our task to make your adversaries</span></p>\n"
-"<p style=\" margin-top:0px; mar"
-                        "gin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:8pt;\"> our adversaries. </span></p></body></html>", 0));
+                        " a number of reasons, in technology disruptions and yet undiscovered, fundamental problems with any of a variety of components. CyberDragons will never be responsible for the failures of other parties software problems, but it will carefully document its process, and will financially compensate clients if a failure is demonstrably ours. This assures our clients that we share in their risk, taking threats as seriously as they do. </span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:8pt;\">It's our task to make your adversaries </span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:8pt;\">our adversaries. </span></p></body></html>", 0));
         textBrowser_3->setHtml(QApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
@@ -262,7 +278,7 @@ public:
                         "><br /></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:8pt;\">Training: The weakest point of any security system will always be the human element. Our training services focus employees on key sources of loss for firms. Techniques will focus on identity verification, advanced programming methodologies, wireless exploits, proper procedures for maintaining physical security of company data, and maintenance of secure systems.</span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:8pt;\">Price range: $2,000-$4,500 per person</span></p></body></html>", 0));
-        label_4->setText(QApplication::translate("MainWindow", "Service Options", 0));
+        label_serviceopt->setText(QApplication::translate("MainWindow", "Service Options", 0));
         textBrowser_4->setHtml(QApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
@@ -278,11 +294,14 @@ public:
                         " -qt-block-indent:0; text-indent:0px; font-size:8pt;\"><br /></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:8pt;\">Yearly training: Our 5 day course updates employees on the latest cybersecurity treats and trends.  </span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:8pt;\">Price $1,500/person</span></p></body></html>", 0));
-        label_5->setText(QApplication::translate("MainWindow", "Maintanance Plan", 0));
-        pushButton_2->setText(QApplication::translate("MainWindow", "Order Now!", 0));
-        pushButton_3->setText(QApplication::translate("MainWindow", "Request Pamphlet", 0));
+        label_maintenance->setText(QApplication::translate("MainWindow", "Maintenance Plan", 0));
+        pushButton_order->setText(QApplication::translate("MainWindow", "Order Now!", 0));
+        pushButton_requestpamplet->setText(QApplication::translate("MainWindow", "Request Pamphlet", 0));
+        pushButton_testimonials->setText(QApplication::translate("MainWindow", "Testimonials", 0));
+        dragonpic->setText(QString());
+        gaurantee->setText(QString());
+        label_company->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:10pt;\">Cyber Dragons</span></p></body></html>", 0));
         menuFile->setTitle(QApplication::translate("MainWindow", "File", 0));
-        menuCustomer->setTitle(QApplication::translate("MainWindow", "Customer", 0));
     } // retranslateUi
 
 };

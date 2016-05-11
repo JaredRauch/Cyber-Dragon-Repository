@@ -1,10 +1,15 @@
 #include "customerlist.h"
 #include "ui_customerlist.h"
+#include <qDebug>
 
-CustomerList::CustomerList(QWidget *parent) :
+CustomerList::CustomerList(QMap<QString, Customer>* customerMap, QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::CustomerList)
 {
+    int row = 0;
+
+    this->customerMap = customerMap;
+
     ui->setupUi(this);
 
     ui->CustomerWidget->horizontalHeader()->setStretchLastSection(true);
@@ -20,6 +25,46 @@ CustomerList::CustomerList(QWidget *parent) :
     else
     {
         ui->EditButton->setEnabled(true);
+    }
+
+    QMap<QString, Customer>::iterator it = customerMap->begin();
+
+    bool cont = (it != customerMap->end());
+    while(cont){
+        QTableWidgetItem* name = new QTableWidgetItem();
+        name->setText(it->getName());
+
+        QTableWidgetItem* interest = new QTableWidgetItem();
+        switch(it->getInterest()){
+        case NOT_INTERESTED : interest->setText("Not Interested");
+            break;
+        case SOMEWHAT_INTERESTED : interest->setText("Somewhat Interested");
+            break;
+        case VERY_INTERESTED : interest->setText("Very Interested");
+            break;
+        }
+
+        QTableWidgetItem* key = new QTableWidgetItem();
+        key->setText(it->isKey() ? "Yes" : "No");
+
+        ui->CustomerWidget->insertRow(row);
+
+        ui->CustomerWidget->setItem(row, 0, name);
+
+        ui->CustomerWidget->setItem(row, 1, interest);
+
+        ui->CustomerWidget->setItem(row, 2, key);
+
+        it++;
+
+        if(it != customerMap->end()){
+            row++;
+            cont = true;
+        }
+        else
+        {
+            cont = false;
+        }
     }
 }
 

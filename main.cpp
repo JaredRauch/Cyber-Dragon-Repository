@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include <iostream>
 #include <QApplication>
+
 #include <QtSql>
 //#include "FileIO.h"
 #include "sha1.h"
@@ -20,6 +21,8 @@ int main(int argc, char *argv[]) {
 
     QApplication a(argc, argv);
     MainWindow w;
+
+
     w.show();
 
     return a.exec();
