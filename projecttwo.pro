@@ -69,3 +69,6 @@ FORMS    += mainwindow.ui \
 DISTFILES += \
     customers.txt \
     iCyberSecurity.sqlite
+
+RESOURCES += \
+    Resources.qrc
