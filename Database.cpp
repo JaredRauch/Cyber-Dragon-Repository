@@ -95,6 +95,31 @@ void Database::AddCustomer(QString  name,
     }
 }
 
+void Database::DeleteCustomer(QString name){
+    removeFromTable("ics_customers", "c_name", name.toStdString());
+    removeFromTable("ics_addresses", "a_customer", name.toStdString());
+    removeFromTable("ics_purchases", "p_customer", name.toStdString());
+    removeFromTable("ics_customer_logins", "cl_customer", name.toStdString());
+}
+
+void Database::removeFromTable(string table, string primaryField, string key){
+    ostringstream sqlCmmd;
+    sqlCmmd << "DELETE FROM "
+            << table
+            << " WHERE "
+            << primaryField
+            << " = '"
+            << key
+            << "'";
+    sqlite3* stmt;
+    char* errMsg;
+    sqlite3_exec(connection, sqlCmmd.str().c_str(), NULL, 0, &errMsg);
+    if(errMsg != NULL){
+        cerr << errMsg;
+    }
+
+}
+
 unsigned* Database::encryptPassword(QString password) const{
     SHA1 encryption;
     unsigned* digest = new unsigned[5];
@@ -117,6 +142,7 @@ unsigned* Database::encryptPassword(QString password) const{
 }
 
 bool Database::validateCustomerLogin(QString username, unsigned* digest) const{
+    qDebug() << "Test";
     ostringstream sqlCmmd;
     sqlCmmd << "SELECT count(*) FROM ics_customer_logins WHERE "
             << "cl_customer = '" << username.toStdString() << "' AND "
