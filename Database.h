@@ -26,6 +26,19 @@ public:
     }
 };
 
+class KeyCollisionException : public exception{
+private:
+    const char* ex;
+
+public:
+    KeyCollisionException(const char* text){ex = text;}
+    virtual ~KeyCollisionException throw(){}
+
+    virtual const char* what() const throw(){
+        return ex;
+    }
+};
+
 class Database{
 private:
     sqlite3* connection;
@@ -33,6 +46,7 @@ private:
     unsigned* encryptPassword(QString password) const;
     bool validateCustomerLogin(QString username, unsigned* digest) const;
     bool validateAdminLogin(QString username, unsigned* digest) const;
+    bool checkKeyCollision(QString table, QString field, QString value) const;
     
 public:
     Database(QString databaseName);
@@ -41,7 +55,7 @@ public:
     Customer* loginAsCustomer(QString username, QString password);
     QMap<QString, Customer>* loginAsAdmin(QString username, QString password);
     
-    void registerCustomer(QString username, QString password);
+    void registerCustomer(QString username, QString password, QString customer);
     void registerAdmin(QString username, QString password);
     
     void AddCustomer(QString  name, 
