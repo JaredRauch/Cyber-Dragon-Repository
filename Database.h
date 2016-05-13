@@ -32,7 +32,7 @@ private:
 
 public:
     KeyCollisionException(const char* text){ex = text;}
-    virtual ~KeyCollisionException throw(){}
+    virtual ~KeyCollisionException() throw(){}
 
     virtual const char* what() const throw(){
         return ex;
@@ -46,7 +46,7 @@ private:
     unsigned* encryptPassword(QString password) const;
     bool validateCustomerLogin(QString username, unsigned* digest) const;
     bool validateAdminLogin(QString username, unsigned* digest) const;
-    bool checkKeyCollision(QString table, QString field, QString value) const;
+    bool checkKeyCollision(string table, string field, string value) const;
     
 public:
     Database(QString databaseName);

@@ -17,10 +17,10 @@ Customer* Database::loginAsCustomer(QString username, QString password){
     if(validateCustomerLogin(username, digest)){
         ostringstream sqlCmmd;
         sqlCmmd << "SELECT cl_customer FROM ics_customer_logins WHERE cl_username = '"
-                << username << "'";
+                << username.toStdString() << "'";
         sqlite3_stmt* stmt;
-        sqlite3_prepare_v2(connection, sqlCmmd.toStr().c_str(), -1, &stmt, NULL);
-        rc = sqlite3_step(stmt);
+        sqlite3_prepare_v2(connection, sqlCmmd.str().c_str(), -1, &stmt, NULL);
+        sqlite3_step(stmt);
         customer = new Customer(connection, QString(static_cast<const char*>(sqlite3_column_blob(stmt, 0))));
     }
     else{
@@ -62,7 +62,7 @@ void Database::AddCustomer(QString  name,
                      QString  streetAddress, QString city, QString state, QString zip,
                      Interest interest,
                      bool     isKey){
-    if(checkKeyCollision(ics_customers, c_name, name)){
+    if(checkKeyCollision("ics_customers", "c_name", name.toStdString())){
         throw new KeyCollisionException("Customer already has an account.");
     }
 
@@ -151,7 +151,7 @@ bool Database::validateAdminLogin(QString username, unsigned* digest) const{
     return sqlite3_column_int(stmt, 0) == 1;
 }
 
-bool checkKeyCollision(QString table, QString field, QString value) const{
+bool Database::checkKeyCollision(string table, string field, string value) const{
     ostringstream sqlCmmd;
     sqlCmmd << "SELECT count(*) FROM "
             << table
@@ -168,8 +168,8 @@ bool checkKeyCollision(QString table, QString field, QString value) const{
 void Database::registerCustomer(QString username, QString password, QString customer){
     unsigned* digest = encryptPassword(password);
 
-    if(checkKeyCollision(ics_customer_logins, cl_username, username) ||
-       checkKeyCollision(ics_customer_logins, cl_customer, customer)){
+    if(checkKeyCollision("ics_customer_logins", "cl_username", username.toStdString()) ||
+       checkKeyCollision("ics_customer_logins", "cl_customer", customer.toStdString())){
         throw new KeyCollisionException("Username already exists or customer already has an account.");
     }
     
@@ -178,7 +178,7 @@ void Database::registerCustomer(QString username, QString password, QString cust
             << "cl_password_part_two, cl_password_part_three, cl_password_part_four, "
             << "cl_password_part_five, cl_username) VALUES ('"
             << customer.toStdString()  << "', "
-            << digest[0] << ",
+            << digest[0] << ", "
             << digest[1] << ", "
             << digest[2] << ", "
             << digest[3] << ", "
@@ -195,7 +195,7 @@ void Database::registerCustomer(QString username, QString password, QString cust
 void Database::registerAdmin(QString username, QString password){
     unsigned* digest = encryptPassword(password);
 
-    if(checkKeyCollision(ics_admin_logins, al_admin, username)){
+    if(checkKeyCollision("ics_admin_logins", "al_admin", username.toStdString())){
         throw new KeyCollisionException("Admin username already exists.");
     }
     
