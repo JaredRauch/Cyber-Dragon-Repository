@@ -1,4 +1,3 @@
-
 #include "Database.h"
 #include <QDebug>
 
@@ -13,7 +12,7 @@ Database::~Database(){
 Customer* Database::loginAsCustomer(QString username, QString password){
     unsigned* digest = encryptPassword(password);
     Customer* customer;
-    
+
     if(validateCustomerLogin(username, digest)){
         ostringstream sqlCmmd;
         sqlCmmd << "SELECT cl_customer FROM ics_customer_logins WHERE cl_username = '"
@@ -38,9 +37,9 @@ QMap<QString, Customer>* Database::loginAsAdmin(QString username, QString passwo
 
     if(validateAdminLogin(username, digest)){
         sqlite3_stmt* stmt;
-        int rc = sqlite3_prepare_v2(connection, "SELECT c_name FROM ics_customers", -1, &stmt, NULL); 
+        int rc = sqlite3_prepare_v2(connection, "SELECT c_name FROM ics_customers", -1, &stmt, NULL);
         rc = sqlite3_step(stmt);
-        
+
         while(rc != SQLITE_DONE){
             QString name = QString(static_cast<const char*>(sqlite3_column_blob(stmt, 0)));
 
@@ -58,7 +57,7 @@ QMap<QString, Customer>* Database::loginAsAdmin(QString username, QString passwo
     return customerMap;
 }
 
-void Database::AddCustomer(QString  name, 
+void Database::AddCustomer(QString  name,
                      QString  streetAddress, QString city, QString state, QString zip,
                      Interest interest,
                      bool     isKey){
@@ -71,7 +70,7 @@ void Database::AddCustomer(QString  name,
              << name.toStdString()       << "', "
              << interest                 << ", "
              << (int)isKey               << ")";
-    
+
     ostringstream address;
     address << "INSERT INTO ics_addresses (a_customer, a_street_address, a_city, a_state, a_zip) VALUES ('"
             << name.toStdString()          << "', '"
@@ -79,84 +78,58 @@ void Database::AddCustomer(QString  name,
             << city.toStdString()          << "', '"
             << state .toStdString()        << "', '"
             << zip.toStdString()           << "')";
-    
+
     char* errMsg;
     sqlite3_exec(connection, customer.str().c_str(), NULL, 0, &errMsg);
-    
+
     if(errMsg != NULL){
         cerr << errMsg;
     }
     else{
         sqlite3_exec(connection, address.str().c_str(), NULL, 0, &errMsg);
-        
+
         if(errMsg!= NULL){
             cerr << errMsg;
         }
     }
 }
 
-void Database::DeleteCustomer(QString name){
-    removeFromTable("ics_customers", "c_name", name.toStdString());
-    removeFromTable("ics_addresses", "a_customer", name.toStdString());
-    removeFromTable("ics_purchases", "p_customer", name.toStdString());
-    removeFromTable("ics_customer_logins", "cl_customer", name.toStdString());
-}
-
-void Database::removeFromTable(string table, string primaryField, string key){
-    ostringstream sqlCmmd;
-    sqlCmmd << "DELETE FROM "
-            << table
-            << " WHERE "
-            << primaryField
-            << " = '"
-            << key
-            << "'";
-    sqlite3* stmt;
-    char* errMsg;
-    sqlite3_exec(connection, sqlCmmd.str().c_str(), NULL, 0, &errMsg);
-    if(errMsg != NULL){
-        cerr << errMsg;
-    }
-
-}
-
 unsigned* Database::encryptPassword(QString password) const{
     SHA1 encryption;
     unsigned* digest = new unsigned[5];
     bool successfulEncryption;
-    
+
     do{
         encryption << password.toStdString().c_str();
 
         successfulEncryption = encryption.Result(digest);
-        
+
         if(!successfulEncryption){
             encryption.Reset();
             delete[] digest;
             digest = new unsigned[5];
         }
-        
+
     }while(!successfulEncryption);
-    
+
     return digest;
 }
 
 bool Database::validateCustomerLogin(QString username, unsigned* digest) const{
-    qDebug() << "Test";
     ostringstream sqlCmmd;
     sqlCmmd << "SELECT count(*) FROM ics_customer_logins WHERE "
-            << "cl_customer = '" << username.toStdString() << "' AND "
+            << "cl_username = '" << username.toStdString() << "' AND "
             << "cl_password_part_one = "   << digest[0] << " AND "
             << "cl_password_part_two = "   << digest[1] << " AND "
             << "cl_password_part_three = " << digest[2] << " AND "
             << "cl_password_part_four = "  << digest[3] << " AND "
             << "cl_password_part_five = "  << digest[4];
-    
+
     sqlite3_stmt* stmt;
     int rc = sqlite3_prepare_v2(connection, sqlCmmd.str().c_str(), -1, &stmt, NULL);
-    
+
     rc = sqlite3_step(stmt);
-    
+
     return rc == SQLITE_ROW && sqlite3_column_int(stmt, 0) == 1;
 }
 
@@ -198,7 +171,7 @@ void Database::registerCustomer(QString username, QString password, QString cust
        checkKeyCollision("ics_customer_logins", "cl_customer", customer.toStdString())){
         throw new KeyCollisionException("Username already exists or customer already has an account.");
     }
-    
+
     ostringstream sqlCmmd;
     sqlCmmd << "INSERT INTO ics_customer_logins (cl_customer, cl_password_part_one, "
             << "cl_password_part_two, cl_password_part_three, cl_password_part_four, "
@@ -210,7 +183,7 @@ void Database::registerCustomer(QString username, QString password, QString cust
             << digest[3] << ", "
             << digest[4] << ", '"
             << username.toStdString() << "')";
-    
+
     char* errMsg;
     sqlite3_exec(connection, sqlCmmd.str().c_str(), NULL, 0, &errMsg);
     if(errMsg != NULL){
@@ -224,7 +197,7 @@ void Database::registerAdmin(QString username, QString password){
     if(checkKeyCollision("ics_admin_logins", "al_admin", username.toStdString())){
         throw new KeyCollisionException("Admin username already exists.");
     }
-    
+
     ostringstream sqlCmmd;
     sqlCmmd << "INSERT INTO ics_admin_logins (al_admin, al_password_part_one, "
             << "al_password_part_two, al_password_part_three, al_password_part_four, "
@@ -235,7 +208,7 @@ void Database::registerAdmin(QString username, QString password){
             << digest[2] << ", "
             << digest[3] << ", "
             << digest[4] << ")";
-    
+
     char* errMsg;
     sqlite3_exec(connection, sqlCmmd.str().c_str(), NULL, 0, &errMsg);
     if(errMsg != NULL){

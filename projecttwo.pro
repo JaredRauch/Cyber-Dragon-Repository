@@ -24,14 +24,17 @@ SOURCES += main.cpp\
     customertestimonials.cpp \
     requestpamphlet.cpp \
     orderproduct.cpp \
-    sqlite3.c \
     Date.cpp \
     Purchase.cpp \
     addcustomerwindow.cpp \
     customerinfo.cpp \
     customerlist.cpp \
     errorwindow.cpp \
-    removewindow.cpp
+    removewindow.cpp \
+    adminlogin.cpp \
+    contactus.cpp \
+    programinstructions.cpp \
+    customerpurchase.cpp
 
 
 HEADERS  += mainwindow.h \
@@ -51,7 +54,11 @@ HEADERS  += mainwindow.h \
     customerinfo.h \
     customerlist.h \
     errorwindow.h \
-    removewindow.h
+    removewindow.h \
+    adminlogin.h \
+    contactus.h \
+    programinstructions.h \
+    customerpurchase.h
 
 
 FORMS    += mainwindow.ui \
@@ -64,7 +71,11 @@ FORMS    += mainwindow.ui \
     customerinfo.ui \
     customerlist.ui \
     errorwindow.ui \
-    removewindow.ui
+    removewindow.ui \
+    adminlogin.ui \
+    contactus.ui \
+    programinstructions.ui \
+    customerpurchase.ui
 
 DISTFILES += \
     customers.txt \

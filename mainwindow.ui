@@ -214,7 +214,7 @@ p, li { white-space: pre-wrap; }
      </font>
     </property>
     <property name="text">
-     <string>Gaurantee</string>
+     <string>Guarantee</string>
     </property>
    </widget>
    <widget class="QTextBrowser" name="textBrowser_2">
@@ -469,6 +469,9 @@ p, li { white-space: pre-wrap; }
     <property name="title">
      <string>File</string>
     </property>
+    <addaction name="actionAdmin_Login"/>
+    <addaction name="actionProgram_Instructions"/>
+    <addaction name="actionContact_Information"/>
    </widget>
    <addaction name="menuFile"/>
   </widget>
@@ -481,6 +484,21 @@ p, li { white-space: pre-wrap; }
    </attribute>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionAdmin_Login">
+   <property name="text">
+    <string>Admin Login</string>
+   </property>
+  </action>
+  <action name="actionProgram_Instructions">
+   <property name="text">
+    <string>Program Instructions</string>
+   </property>
+  </action>
+  <action name="actionContact_Information">
+   <property name="text">
+    <string>Contact Information</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>

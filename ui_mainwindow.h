@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created by: Qt User Interface Compiler version 5.5.0
+** Created by: Qt User Interface Compiler version 5.5.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -33,6 +33,9 @@ QT_BEGIN_NAMESPACE
 class Ui_MainWindow
 {
 public:
+    QAction *actionAdmin_Login;
+    QAction *actionProgram_Instructions;
+    QAction *actionContact_Information;
     QWidget *centralWidget;
     QGroupBox *groupBox;
     QLabel *label_validation;
@@ -70,6 +73,12 @@ public:
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
         MainWindow->resize(1147, 672);
+        actionAdmin_Login = new QAction(MainWindow);
+        actionAdmin_Login->setObjectName(QStringLiteral("actionAdmin_Login"));
+        actionProgram_Instructions = new QAction(MainWindow);
+        actionProgram_Instructions->setObjectName(QStringLiteral("actionProgram_Instructions"));
+        actionContact_Information = new QAction(MainWindow);
+        actionContact_Information->setObjectName(QStringLiteral("actionContact_Information"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         groupBox = new QGroupBox(centralWidget);
@@ -222,6 +231,9 @@ public:
         MainWindow->setStatusBar(statusBar);
 
         menuBar->addAction(menuFile->menuAction());
+        menuFile->addAction(actionAdmin_Login);
+        menuFile->addAction(actionProgram_Instructions);
+        menuFile->addAction(actionContact_Information);
 
         retranslateUi(MainWindow);
         QObject::connect(lineEdit_password, SIGNAL(returnPressed()), pushButton, SLOT(click()));
@@ -232,6 +244,9 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", 0));
+        actionAdmin_Login->setText(QApplication::translate("MainWindow", "Admin Login", 0));
+        actionProgram_Instructions->setText(QApplication::translate("MainWindow", "Program Instructions", 0));
+        actionContact_Information->setText(QApplication::translate("MainWindow", "Contact Information", 0));
         groupBox->setTitle(QApplication::translate("MainWindow", "Login", 0));
         label_validation->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" color:#ff0000;\">*Invalid Credentials</span></p></body></html>", 0));
         pushButton->setText(QApplication::translate("MainWindow", "Login", 0));
@@ -253,7 +268,7 @@ public:
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\"><br /></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:8pt;\">CyberDragons employs a team of 5"
                         " security professionals with unique perspectives and areas of experience. With years of experience and research, CyberDragons offers preventative diagnostics services to help your company maintain the integrity of its commitment to customer data security. CyberDragons has relationships with hardware vendors to help obtain the most guaranteed secure firewalls, access badges, server hardware, and security cameras. We provide proven techniques to maintain total onsite physical security, while maintaining continuous access monitoring through your cloud. </span></p></body></html>", 0));
-        label_gaurantee->setText(QApplication::translate("MainWindow", "Gaurantee", 0));
+        label_gaurantee->setText(QApplication::translate("MainWindow", "Guarantee", 0));
         textBrowser_2->setHtml(QApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"

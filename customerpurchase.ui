@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>customerPurchase</class>
+ <widget class="QDialog" name="customerPurchase">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>529</width>
+    <height>430</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>Customer Order Menu</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QComboBox" name="comboBox">
+     <item>
+      <property name="text">
+       <string>Select a Product!</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Basic Security</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Advanced Security</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Training</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Basic Maintenance</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Yearly Training</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item>
+    <widget class="QTableWidget" name="tableWidget">
+     <attribute name="horizontalHeaderDefaultSectionSize">
+      <number>200</number>
+     </attribute>
+     <column>
+      <property name="text">
+       <string>Customer Purchase History</string>
+      </property>
+     </column>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

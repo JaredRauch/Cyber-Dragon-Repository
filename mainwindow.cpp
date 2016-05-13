@@ -38,8 +38,9 @@ void MainWindow::on_pushButton_clicked()
     password = ui->lineEdit_password->text();
     bool success;
 
+
    try{
-       customerMap = db->loginAsAdmin(username, password);
+       customer = db->loginAsCustomer(username, password);
        success = true;
        //Launch customerList.cpp
    }
@@ -50,20 +51,22 @@ void MainWindow::on_pushButton_clicked()
 
    if(success)
    {
-       ui->label_validation->setVisible(true);
+       ui->label_validation->setVisible(false);
 
-       CustomerList *adminUI = new CustomerList(customerMap);
+       customerPurchase *customerUI = new customerPurchase(customerMap);
+       //CustomerList *adminUI = new CustomerList(customerMap);
 
-       adminUI->show();
+       customerUI->show();
+
+       //adminUI->show();
    }
    else
    {
-       ui->label_validation->setVisible(false);
-              ui->pushButton_logout->setVisible(true);
+       ui->label_validation->setVisible(true);
+       ui->pushButton_logout->setVisible(true);
        ui->groupBox->setVisible(false);
 
    }
-
 }
 
 void MainWindow::on_pushButton_logout_clicked()
@@ -91,4 +94,22 @@ void MainWindow::on_pushButton_requestpamplet_clicked()
 {
     requestpamphlet = new RequestPamphlet(this);
     requestpamphlet->show();
+}
+
+void MainWindow::on_actionAdmin_Login_triggered()
+{
+    adminlogin = new adminLogin(db, this);
+    adminlogin->show();
+}
+
+void MainWindow::on_actionProgram_Instructions_triggered()
+{
+    programinstructions = new ProgramInstructions (this);
+    programinstructions->show();
+}
+
+void MainWindow::on_actionContact_Information_triggered()
+{
+    contactus = new ContactUs (this);
+    contactus->show();
 }

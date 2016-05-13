@@ -47,7 +47,6 @@ private:
     bool validateCustomerLogin(QString username, unsigned* digest) const;
     bool validateAdminLogin(QString username, unsigned* digest) const;
     bool checkKeyCollision(string table, string field, string value) const;
-    void removeFromTable(string table, string primaryField, string key);
     
 public:
     Database(QString databaseName);
@@ -63,7 +62,6 @@ public:
                      QString  streetAddress, QString city, QString state, QString zip,
                      Interest interest,
                      bool     isKey);
-    void DeleteCustomer(QString name);
 };
 
 #endif /* DATABASE_H */
