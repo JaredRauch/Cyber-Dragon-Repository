@@ -183,7 +183,7 @@ void Database::registerCustomer(QString username, QString password, QString cust
             << digest[2] << ", "
             << digest[3] << ", "
             << digest[4] << ", '"
-            << username.toStdString() << "'";
+            << username.toStdString() << "')";
     
     char* errMsg;
     sqlite3_exec(connection, sqlCmmd.str().c_str(), NULL, 0, &errMsg);
