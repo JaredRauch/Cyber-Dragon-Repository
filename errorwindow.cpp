@@ -15,6 +15,9 @@ ErrorWindow::ErrorWindow(int index, QWidget *parent) :
     case RemoveFromListError: ui->label->setText("Cannot"
                                                  " remove customers from empty list!");
                               break;
+
+    case Remove_That_Doesnt_Exist: ui->label->setText("Cannot remove a customer that"
+                                                      "does not exist");
     }
 }
 

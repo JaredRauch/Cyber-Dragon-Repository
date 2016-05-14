@@ -6,7 +6,7 @@ CustomerList::CustomerList(QMap<QString, Customer>* customerMap, QWidget *parent
     QMainWindow(parent),
     ui(new Ui::CustomerList)
 {
-    int row = 0;
+    row = 0;
 
     this->customerMap = customerMap;
 
@@ -73,9 +73,19 @@ CustomerList::~CustomerList()
     delete ui;
 }
 
+//void CustomerList::AddCustomer(QString name, QString street, QString city, QString Zipcode)
+//{
+//    row++;
+
+
+
+
+//    ui->CustomerWidget->insertRow(row);
+//}
+
 void CustomerList::on_AddButton_clicked()
 {
-    AddCustomerWindow *window = new AddCustomerWindow;
+    AddCustomerWindow *window = new AddCustomerWindow(this);
 
     window->show();
 }

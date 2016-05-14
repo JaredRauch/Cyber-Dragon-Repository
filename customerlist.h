@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <iterator>
+#include <QObject>
 #include "addcustomerwindow.h"
 #include "customerinfo.h"
 #include "Database.h"
@@ -19,6 +20,10 @@ public:
     explicit CustomerList(QMap<QString, Customer>* customerMap, QWidget *parent = 0);
     ~CustomerList();
 
+public slots:
+
+//    void AddCustomer(QString name, QString street, QString city, QString Zipcode);
+
 private slots:
     void on_AddButton_clicked();
 
@@ -30,6 +35,8 @@ private:
     Ui::CustomerList *ui;
 
     QMap<QString, Customer>* customerMap;
+
+    int row;
 };
 
 #endif // CUSTOMERLIST_H

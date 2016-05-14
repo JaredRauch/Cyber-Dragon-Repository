@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>707</width>
-    <height>389</height>
+    <height>487</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -409,9 +409,9 @@
     <property name="geometry">
      <rect>
       <x>490</x>
-      <y>309</y>
+      <y>380</y>
       <width>201</width>
-      <height>31</height>
+      <height>61</height>
      </rect>
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout">
@@ -433,6 +433,71 @@
       </widget>
      </item>
     </layout>
+   </widget>
+   <widget class="QCheckBox" name="not_interested_radio">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>330</y>
+      <width>101</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Not Interested</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="some_interested_radio">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>360</y>
+      <width>131</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Somewhat Interested</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="very_interested_radio">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>390</y>
+      <width>131</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Very Interested</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="IsKey_CheckBox">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>330</y>
+      <width>111</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Is a key customer</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="check_label">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>380</y>
+      <width>191</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">

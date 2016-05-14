@@ -2,6 +2,8 @@
 #define REMOVEWINDOW_H
 
 #include <QMainWindow>
+#include "Database.h"
+#include "errorwindow.h"
 
 namespace Ui {
 class RemoveWindow;
@@ -22,6 +24,8 @@ private slots:
 
 private:
     Ui::RemoveWindow *ui;
+
+    Database *db;
 };
 
 #endif // REMOVEWINDOW_H

@@ -24,7 +24,8 @@ private:
     enum
     {
         AddCustomerError,
-        RemoveFromListError
+        RemoveFromListError,
+        Remove_That_Doesnt_Exist
     };
 };
 
