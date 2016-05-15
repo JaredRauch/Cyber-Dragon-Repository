@@ -13,6 +13,7 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QCheckBox>
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
@@ -46,6 +47,11 @@ public:
     QHBoxLayout *horizontalLayout;
     QPushButton *acceptButton;
     QPushButton *rejectButton;
+    QCheckBox *not_interested_radio;
+    QCheckBox *some_interested_radio;
+    QCheckBox *very_interested_radio;
+    QCheckBox *IsKey_CheckBox;
+    QLabel *check_label;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -53,7 +59,7 @@ public:
     {
         if (AddCustomerWindow->objectName().isEmpty())
             AddCustomerWindow->setObjectName(QStringLiteral("AddCustomerWindow"));
-        AddCustomerWindow->resize(707, 389);
+        AddCustomerWindow->resize(707, 487);
         centralwidget = new QWidget(AddCustomerWindow);
         centralwidget->setObjectName(QStringLiteral("centralwidget"));
         label = new QLabel(centralwidget);
@@ -94,7 +100,7 @@ public:
         ZipLineEdit->setGeometry(QRect(140, 280, 113, 20));
         horizontalLayoutWidget = new QWidget(centralwidget);
         horizontalLayoutWidget->setObjectName(QStringLiteral("horizontalLayoutWidget"));
-        horizontalLayoutWidget->setGeometry(QRect(490, 309, 201, 31));
+        horizontalLayoutWidget->setGeometry(QRect(490, 380, 201, 61));
         horizontalLayout = new QHBoxLayout(horizontalLayoutWidget);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
@@ -109,6 +115,21 @@ public:
 
         horizontalLayout->addWidget(rejectButton);
 
+        not_interested_radio = new QCheckBox(centralwidget);
+        not_interested_radio->setObjectName(QStringLiteral("not_interested_radio"));
+        not_interested_radio->setGeometry(QRect(60, 330, 101, 17));
+        some_interested_radio = new QCheckBox(centralwidget);
+        some_interested_radio->setObjectName(QStringLiteral("some_interested_radio"));
+        some_interested_radio->setGeometry(QRect(60, 360, 131, 17));
+        very_interested_radio = new QCheckBox(centralwidget);
+        very_interested_radio->setObjectName(QStringLiteral("very_interested_radio"));
+        very_interested_radio->setGeometry(QRect(60, 390, 131, 17));
+        IsKey_CheckBox = new QCheckBox(centralwidget);
+        IsKey_CheckBox->setObjectName(QStringLiteral("IsKey_CheckBox"));
+        IsKey_CheckBox->setGeometry(QRect(240, 330, 111, 17));
+        check_label = new QLabel(centralwidget);
+        check_label->setObjectName(QStringLiteral("check_label"));
+        check_label->setGeometry(QRect(200, 380, 191, 31));
         AddCustomerWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(AddCustomerWindow);
         menubar->setObjectName(QStringLiteral("menubar"));
@@ -188,6 +209,11 @@ public:
         );
         acceptButton->setText(QApplication::translate("AddCustomerWindow", "OK", 0));
         rejectButton->setText(QApplication::translate("AddCustomerWindow", "Cancel", 0));
+        not_interested_radio->setText(QApplication::translate("AddCustomerWindow", "Not Interested", 0));
+        some_interested_radio->setText(QApplication::translate("AddCustomerWindow", "Somewhat Interested", 0));
+        very_interested_radio->setText(QApplication::translate("AddCustomerWindow", "Very Interested", 0));
+        IsKey_CheckBox->setText(QApplication::translate("AddCustomerWindow", "Is a key customer", 0));
+        check_label->setText(QString());
     } // retranslateUi
 
 };

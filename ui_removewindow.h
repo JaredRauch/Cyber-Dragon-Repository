@@ -31,6 +31,7 @@ public:
     QLabel *label;
     QDialogButtonBox *ConformBox;
     QLineEdit *NameLineEdit;
+    QLabel *Blank_Label;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -52,6 +53,9 @@ public:
         NameLineEdit = new QLineEdit(centralwidget);
         NameLineEdit->setObjectName(QStringLiteral("NameLineEdit"));
         NameLineEdit->setGeometry(QRect(110, 80, 381, 20));
+        Blank_Label = new QLabel(centralwidget);
+        Blank_Label->setObjectName(QStringLiteral("Blank_Label"));
+        Blank_Label->setGeometry(QRect(110, 120, 281, 31));
         RemoveWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(RemoveWindow);
         menubar->setObjectName(QStringLiteral("menubar"));
@@ -70,6 +74,7 @@ public:
     {
         RemoveWindow->setWindowTitle(QApplication::translate("RemoveWindow", "MainWindow", 0));
         label->setText(QApplication::translate("RemoveWindow", "<html><head/><body><p><span style=\" font-size:12pt;\">Enter the name of the customer you wish to Remove:</span></p></body></html>", 0));
+        Blank_Label->setText(QApplication::translate("RemoveWindow", "TextLabel", 0));
     } // retranslateUi
 
 };
