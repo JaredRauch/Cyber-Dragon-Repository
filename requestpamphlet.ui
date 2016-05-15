@@ -16,14 +16,21 @@
   <widget class="QLabel" name="label_4">
    <property name="geometry">
     <rect>
-     <x>20</x>
+     <x>30</x>
      <y>10</y>
-     <width>101</width>
-     <height>16</height>
+     <width>321</width>
+     <height>61</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>15</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
    <property name="text">
-    <string>Request Pamphlet</string>
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Request Pamphlet&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
   <widget class="QWidget" name="layoutWidget">
@@ -53,7 +60,7 @@
     <rect>
      <x>120</x>
      <y>140</y>
-     <width>71</width>
+     <width>92</width>
      <height>22</height>
     </rect>
    </property>
@@ -73,9 +80,9 @@
   <widget class="QWidget" name="layoutWidget_3">
    <property name="geometry">
     <rect>
-     <x>200</x>
+     <x>220</x>
      <y>140</y>
-     <width>161</width>
+     <width>141</width>
      <height>22</height>
     </rect>
    </property>
@@ -92,7 +99,7 @@
     </item>
    </layout>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -114,7 +121,7 @@
     </item>
    </layout>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -136,17 +143,32 @@
     </item>
    </layout>
   </widget>
-  <zorder>lineEdit</zorder>
-  <zorder>lineEdit_2</zorder>
-  <zorder>lineEdit_3</zorder>
-  <zorder>label</zorder>
-  <zorder>label_2</zorder>
-  <zorder>label_3</zorder>
-  <zorder>lineEdit_2</zorder>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>14</x>
+     <y>192</y>
+     <width>351</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>Send Pamphlet</string>
+   </property>
+  </widget>
+  <zorder>layoutWidget</zorder>
+  <zorder>layoutWidget</zorder>
   <zorder>label_4</zorder>
   <zorder>layoutWidget</zorder>
   <zorder>layoutWidget_2</zorder>
   <zorder>layoutWidget_3</zorder>
+  <zorder>pushButton</zorder>
  </widget>
  <resources/>
  <connections/>

@@ -6,7 +6,6 @@ OrderProduct::OrderProduct(QWidget *parent) :
     ui(new Ui::OrderProduct)
 {
     ui->setupUi(this);
-
 }
 
 OrderProduct::~OrderProduct()
@@ -14,7 +13,8 @@ OrderProduct::~OrderProduct()
     delete ui;
 }
 
-void OrderProduct::on_comboBox_activated(const QString &arg1)
+void OrderProduct::on_pushButton_clicked()
 {
-
+    this->close();
 }
+

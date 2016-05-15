@@ -12,3 +12,8 @@ RequestPamphlet::~RequestPamphlet()
 {
     delete ui;
 }
+
+void RequestPamphlet::on_pushButton_clicked()
+{
+    this->close();
+}

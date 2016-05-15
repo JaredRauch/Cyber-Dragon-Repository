@@ -15,6 +15,9 @@ public:
     explicit RequestPamphlet(QWidget *parent = 0);
     ~RequestPamphlet();
 
+private slots:
+    void on_pushButton_clicked();
+
 private:
     Ui::RequestPamphlet *ui;
 };
