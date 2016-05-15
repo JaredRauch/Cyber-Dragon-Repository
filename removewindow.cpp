@@ -17,8 +17,8 @@ RemoveWindow::~RemoveWindow()
 
 void RemoveWindow::on_ConformBox_accepted()
 {
-    try
-    {
+   // try
+   // {
         if(ui->NameLineEdit->text() == "")
         {
             ui->Blank_Label->setText("<font color = 'red'>*Please enter in a name!</font>");
@@ -28,15 +28,15 @@ void RemoveWindow::on_ConformBox_accepted()
             // Implement check through customer data base.
             hide();
 
-            db->DeleteCustomer(ui->NameLineEdit->text());
+        //    db->DeleteCustomer(ui->NameLineEdit->text());
         }
-    };
-    catch()
-    {
+   // };
+   // catch()
+   // {
         ErrorWindow *e = new ErrorWindow(3);
 
         e->show();
-    }
+   // }
 
 }
 
@@ -44,3 +44,4 @@ void RemoveWindow::on_ConformBox_rejected()
 {
     hide();
 }
+
