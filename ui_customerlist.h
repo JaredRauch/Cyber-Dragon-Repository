@@ -36,6 +36,7 @@ public:
     QPushButton *InfoButton;
     QPushButton *EditButton;
     QPushButton *RemoveButton;
+    QPushButton *pushButton;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
     QMenuBar *menuBar;
@@ -59,10 +60,12 @@ public:
         CustomerWidget->setObjectName(QStringLiteral("CustomerWidget"));
         CustomerWidget->setGeometry(QRect(10, 10, 1091, 491));
         CustomerWidget->setRowCount(0);
+        CustomerWidget->horizontalHeader()->setCascadingSectionResizes(false);
+        CustomerWidget->horizontalHeader()->setDefaultSectionSize(150);
         CustomerWidget->verticalHeader()->setVisible(false);
         horizontalLayoutWidget = new QWidget(centralWidget);
         horizontalLayoutWidget->setObjectName(QStringLiteral("horizontalLayoutWidget"));
-        horizontalLayoutWidget->setGeometry(QRect(130, 510, 781, 51));
+        horizontalLayoutWidget->setGeometry(QRect(130, 510, 841, 51));
         horizontalLayout = new QHBoxLayout(horizontalLayoutWidget);
         horizontalLayout->setSpacing(6);
         horizontalLayout->setContentsMargins(11, 11, 11, 11);
@@ -91,6 +94,9 @@ public:
 
         horizontalLayout->addWidget(RemoveButton);
 
+        pushButton = new QPushButton(centralWidget);
+        pushButton->setObjectName(QStringLiteral("pushButton"));
+        pushButton->setGeometry(QRect(20, 520, 75, 23));
         CustomerList->setCentralWidget(centralWidget);
         mainToolBar = new QToolBar(CustomerList);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
@@ -121,6 +127,7 @@ public:
         InfoButton->setText(QApplication::translate("CustomerList", "Information", 0));
         EditButton->setText(QApplication::translate("CustomerList", "Remove by Name", 0));
         RemoveButton->setText(QApplication::translate("CustomerList", "Remove from row selected", 0));
+        pushButton->setText(QApplication::translate("CustomerList", "Refresh", 0));
     } // retranslateUi
 
 };

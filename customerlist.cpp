@@ -109,10 +109,9 @@ void CustomerList::on_InfoButton_clicked()
     CustomerInfo *window = new CustomerInfo;
 
     window->show();
-}
 
-void CustomerList::on_pushButton_clicked()
-{
+
+
     row = 0;
 
     this->customerMap = customerMap;

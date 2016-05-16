@@ -115,7 +115,7 @@ public:
 
         layoutWidget_4 = new QWidget(OrderProduct);
         layoutWidget_4->setObjectName(QStringLiteral("layoutWidget_4"));
-        layoutWidget_4->setGeometry(QRect(210, 210, 161, 22));
+        layoutWidget_4->setGeometry(QRect(220, 210, 151, 22));
         horizontalLayout_5 = new QHBoxLayout(layoutWidget_4);
         horizontalLayout_5->setObjectName(QStringLiteral("horizontalLayout_5"));
         horizontalLayout_5->setContentsMargins(0, 0, 0, 0);

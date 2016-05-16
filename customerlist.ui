@@ -26,6 +26,12 @@
     <property name="rowCount">
      <number>0</number>
     </property>
+    <attribute name="horizontalHeaderCascadingSectionResizes">
+     <bool>false</bool>
+    </attribute>
+    <attribute name="horizontalHeaderDefaultSectionSize">
+     <number>150</number>
+    </attribute>
     <attribute name="verticalHeaderVisible">
      <bool>false</bool>
     </attribute>

@@ -6,7 +6,7 @@ CustomerTestimonials::CustomerTestimonials(QWidget *parent) :
     ui(new Ui::CustomerTestimonials)
 {
     ui->setupUi(this);
-
+    ui->tableWidget->horizontalHeader()->setStretchLastSection(true);
     ui->tableWidget->setColumnCount(2);
     ui->tableWidget->setRowCount(0);
     row = 0;
@@ -20,6 +20,7 @@ CustomerTestimonials::~CustomerTestimonials()
 
 void CustomerTestimonials::on_pushButton_clicked()
 {
+
     ui->tableWidget->setRowCount(row+1);
 
     QString name=ui->lineEdit->text();

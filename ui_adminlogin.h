@@ -42,7 +42,7 @@ public:
     {
         if (adminLogin->objectName().isEmpty())
             adminLogin->setObjectName(QStringLiteral("adminLogin"));
-        adminLogin->resize(400, 300);
+        adminLogin->resize(300, 181);
         groupBox = new QGroupBox(adminLogin);
         groupBox->setObjectName(QStringLiteral("groupBox"));
         groupBox->setGeometry(QRect(30, 30, 231, 111));

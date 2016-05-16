@@ -64,9 +64,10 @@ public:
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">On the bottom of the main page are customer testimonial access and submission, the ability to order pamphlets, and the ability to order product for non current customers. </p>\n"
 "<p style=\"-qt-paragraph-type:empty"
                         "; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">The main window login screen contains customer login access, which allows current customers to order more products. </p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">The main window login screen contains customer login access, which allows current customers to order more products. Login details are the customer name in lower case. Example: <span style=\" font-weight:600;\">Username</span> = cia  <span style=\" font-weight:600;\">Password</span> = cia</p>\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Admin only login access is found in the file menu, along with contact information. </p></body></html>", 0));
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Admin only login access is found in the file menu, along with contact information. The login details for admins are: <span style=\" font-weight:600;\">Username</span> = admin  <span style=\" font-wei"
+                        "ght:600;\">Password</span> = pass</p></body></html>", 0));
     } // retranslateUi
 
 };

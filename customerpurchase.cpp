@@ -15,7 +15,7 @@ customerPurchase::customerPurchase(QMap<QString, Customer>* customerMap, QWidget
     ui(new Ui::customerPurchase)
 {
     ui->setupUi(this);
-
+    ui->tableWidget->horizontalHeader()->setStretchLastSection(true);
     ui->tableWidget->setColumnCount(1);
     ui->tableWidget->setRowCount(0);
     row = 0;
