@@ -36,6 +36,20 @@ QString Customer::getZip() const{
     return QString(static_cast<const char*>(sqlite3_column_blob(stmt, 0)));
 }
 
+QString Customer::getAddress() const{
+    ostringstream oss;
+    oss << getStreetAddress().toStdString() << endl;
+    oss << getCity().toStdString();
+    
+    if(getCity() != "DC" && getCity() != "D.C."){
+        oss << ", " << getState().toStdString();
+    }
+    
+    oss << " " << getZip().toStdString();
+    
+    return QString(oss.str().c_str());
+}
+
 Interest Customer::getInterest() const{
     sqlite3_stmt* stmt = searchDB("c_interest", "ics_customers", "c_name");
     return (Interest)sqlite3_column_int(stmt, 0);

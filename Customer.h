@@ -19,7 +19,7 @@
 #include "sqlite3.h"
 #include "Purchase.h"
 
-enum Interest{NOT_INTERESTED, SOMEWHAT_INTERESTED, VERY_INTERESTED, INVALID_VALUE};
+enum Interest{NOT_INTERESTED, SOMEWHAT_INTERESTED, VERY_INTERESTED};
 
 class Customer{
 private:
@@ -39,6 +39,7 @@ public:
     QString getCity() const;
     QString getState() const;
     QString getZip() const;
+    QString getAddress() const;
     Interest getInterest() const;
     bool isKey() const;
     list<Purchase>* getPurchases() const;

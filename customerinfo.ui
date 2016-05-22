@@ -38,53 +38,75 @@
      <widget class="QLabel" name="nameLabel">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>10</y>
-        <width>531</width>
+        <x>0</x>
+        <y>0</y>
+        <width>551</width>
         <height>16</height>
        </rect>
       </property>
       <property name="text">
-       <string>TextLabel</string>
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="tableWidget">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>81</y>
+        <width>551</width>
+        <height>241</height>
+       </rect>
       </property>
      </widget>
      <widget class="QLabel" name="addressLabel">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>40</y>
-        <width>531</width>
-        <height>31</height>
+        <x>0</x>
+        <y>20</y>
+        <width>551</width>
+        <height>41</height>
        </rect>
       </property>
       <property name="text">
-       <string>TextLabel</string>
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QLabel" name="productLabel">
+     <widget class="QLabel" name="interestLabel">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>80</y>
-        <width>531</width>
-        <height>31</height>
+        <x>0</x>
+        <y>60</y>
+        <width>281</width>
+        <height>21</height>
        </rect>
       </property>
       <property name="text">
-       <string>TextLabel</string>
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QLabel" name="testimonyLabel">
+     <widget class="QLabel" name="isKeyLabel">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>130</y>
-        <width>531</width>
-        <height>181</height>
+        <x>290</x>
+        <y>60</y>
+        <width>261</width>
+        <height>21</height>
        </rect>
       </property>
       <property name="text">
-       <string>TextLabel</string>
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
     </widget>
@@ -96,7 +118,7 @@
      <x>0</x>
      <y>0</y>
      <width>576</width>
-     <height>21</height>
+     <height>25</height>
     </rect>
    </property>
   </widget>

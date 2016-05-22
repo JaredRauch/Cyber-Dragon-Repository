@@ -37,6 +37,8 @@ private:
     QMap<QString, Customer>* customerMap;
 
     int row;
+    int selectedRow;
+    int selectedColumn;
 };
 
 #endif // CUSTOMERLIST_H
