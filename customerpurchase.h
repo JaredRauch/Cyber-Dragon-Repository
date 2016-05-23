@@ -13,7 +13,7 @@ class customerPurchase : public QDialog
     Q_OBJECT
 
 public:
-    explicit customerPurchase(QMap<QString, Customer>* customerMap, QWidget *parent = 0);
+    explicit customerPurchase(Customer* customer, QWidget *parent = 0);
     ~customerPurchase();
 
 private slots:
@@ -28,7 +28,7 @@ private:
     int row;
     int col;
 
-      QMap<QString, Customer>* customerMap;
+    Customer* customer;
 };
 
 #endif // CUSTOMERPURCHASE_H

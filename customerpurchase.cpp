@@ -10,10 +10,11 @@
 #include <QMessageBox>
 #include <QWidget>
 
-customerPurchase::customerPurchase(QMap<QString, Customer>* customerMap, QWidget *parent) :
+customerPurchase::customerPurchase(Customer* customer, QWidget *parent) :
     QDialog(parent),
     ui(new Ui::customerPurchase)
 {
+    this->customer = customer;
     ui->setupUi(this);
     ui->tableWidget->horizontalHeader()->setStretchLastSection(true);
     ui->tableWidget->setColumnCount(1);
@@ -36,8 +37,25 @@ void customerPurchase::on_comboBox_currentIndexChanged( const QString &arg1)
 
    // QString text = ui->comboBox->GetItemText(this.comboBox.SelectedItem);
     QString text = ui->comboBox->currentText();
+    Service service;
+    /*if(text == "Basic Security"){
+        service = 0;
+    }
+    else if(text == "Advanced Security"){
+        service = 1;
+    }
+    else if(text == "Training"){
+        service = 2;
+    }
+    else if(text == "Basic Maintenance"){
+        service = 3;
+    }
+    else if(text == "Yearly Training"){
+        service = 4;
+    }*/
 
-    qDebug() << text;
+    //COLLECT PRICE, STARTDATE, and END DATE for the purchase.
+//    customer->addPurchase(service, )
 
 
     QTableWidgetItem* newItem = new QTableWidgetItem(text);

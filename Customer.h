@@ -25,15 +25,15 @@ class Customer{
 private:
     sqlite3* db;
     QString name;
-    
+
     sqlite3_stmt* searchDB(const char* field, const char* table, const char* primaryKey) const;
-    
-    template<typename T> 
+
+    template<typename T>
     void updateField(const char* field, T value, const char* table, const char* primaryKey);
-    
+
 public:
     Customer(sqlite3* db, QString name);
-    
+
     QString getName() const;
     QString getStreetAddress() const;
     QString getCity() const;
@@ -44,8 +44,8 @@ public:
     bool isKey() const;
     list<Purchase>* getPurchases() const;
     QString toString() const;
-    
-    
+
+
     void setName(QString name);
     void setStreetAddress(QString streetAddress);
     void setCity(QString city);

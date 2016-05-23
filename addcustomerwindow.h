@@ -14,7 +14,7 @@ class AddCustomerWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit AddCustomerWindow(QWidget *parent = 0);
+    explicit AddCustomerWindow(Database* db, QWidget *parent = 0);
     ~AddCustomerWindow();
 
 signals:
@@ -36,7 +36,8 @@ private slots:
 private:
     Ui::AddCustomerWindow *ui;
 
+
     Database *db;
 };
 
-#endif // ADDCUSTOMERWINDOW_H
+#endif ADDCUSTOMERWINDOW_H

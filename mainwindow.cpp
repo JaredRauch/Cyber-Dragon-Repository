@@ -53,7 +53,7 @@ void MainWindow::on_pushButton_clicked()
    {
        ui->label_validation->setVisible(false);
 
-       customerPurchase *customerUI = new customerPurchase(customerMap);
+       customerPurchase *customerUI = new customerPurchase(customer);
        //CustomerList *adminUI = new CustomerList(customerMap);
 
        customerUI->show();

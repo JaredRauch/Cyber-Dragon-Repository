@@ -45,7 +45,11 @@ void adminLogin::on_pushButton_clicked()
    {
        ui->label_validation->setVisible(false);
 
-       CustomerList *adminUI = new CustomerList(customerMap);
+       CustomerList *adminUI = CustomerList::getInstance();
+       adminUI->setDB(db);
+       adminUI->setUsername(username);
+       adminUI->setPassword(password);
+       adminUI->updateTable();
 
        adminUI->show();
    }

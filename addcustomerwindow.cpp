@@ -1,14 +1,15 @@
 #include "addcustomerwindow.h"
+#include "errorwindow.h"
 #include "ui_addcustomerwindow.h"
+#include "customerlist.h"
 #include "QDebug"
 
-AddCustomerWindow::AddCustomerWindow(QWidget *parent) :
+AddCustomerWindow::AddCustomerWindow(Database* db, QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::AddCustomerWindow)
 {
     ui->setupUi(this);
-
-    db = new Database("iCyberSecurity.sqlite");
+    this->db = db;
 }
 
 AddCustomerWindow::~AddCustomerWindow()
@@ -106,6 +107,7 @@ void AddCustomerWindow::on_acceptButton_clicked()
 
         }
 
+      //  CustomerList::getInstance()->updateTable();
     /*};
     catch()
     {
