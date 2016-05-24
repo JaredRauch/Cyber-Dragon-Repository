@@ -188,7 +188,7 @@ DESTDIR_TARGET = debug/projecttwo.exe
 first: all
 all: Makefile.Debug  $(DESTDIR_TARGET)
 
-$(DESTDIR_TARGET): ui_mainwindow.h ui_dialog.h ui_maintenanceplan.h ui_customertestimonials.h ui_requestpamphlet.h ui_orderproduct.h ui_addcustomerwindow.h ui_customerlist.h ui_errorwindow.h ui_removewindow.h ui_adminlogin.h ui_contactus.h ui_programinstructions.h ui_customerpurchase.h ui_customerinfo.h $(OBJECTS) 
+$(DESTDIR_TARGET): ui_mainwindow.h ui_dialog.h ui_maintenanceplan.h ui_customertestimonials.h ui_requestpamphlet.h ui_orderproduct.h ui_addcustomerwindow.h ui_customerinfo.h ui_customerlist.h ui_errorwindow.h ui_removewindow.h ui_adminlogin.h ui_contactus.h ui_programinstructions.h ui_customerpurchase.h $(OBJECTS) 
 	$(LINKER) $(LFLAGS) -o $(DESTDIR_TARGET) object_script.projecttwo.Debug  $(LIBS)
 
 qmake: FORCE
@@ -355,7 +355,7 @@ debug/moc_mainwindow.cpp: C:/Qt/5.5/mingw492_32/include/QtWidgets/QMainWindow \
 		contactus.h \
 		customerpurchase.h \
 		mainwindow.h
-	'C:\Qt\5.5\mingw492_32\bin\moc.exe' $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.5/mingw492_32/mkspecs/win32-g++ -I'C:/Users/jay/Desktop/rar/Cyber-Dragon-Repository(2)' -IC:/Qt/5.5/mingw492_32/include -IC:/Qt/5.5/mingw492_32/include/QtWidgets -IC:/Qt/5.5/mingw492_32/include/QtGui -IC:/Qt/5.5/mingw492_32/include/QtANGLE -IC:/Qt/5.5/mingw492_32/include/QtSql -IC:/Qt/5.5/mingw492_32/include/QtCore mainwindow.h -o debug/moc_mainwindow.cpp
+	'C:\Qt\5.5\mingw492_32\bin\moc.exe' $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.5/mingw492_32/mkspecs/win32-g++ -I'C:/Users/jay/Desktop/second attempt to reconcile two projects/Cyber-Dragon-Repository(2)' -IC:/Qt/5.5/mingw492_32/include -IC:/Qt/5.5/mingw492_32/include/QtWidgets -IC:/Qt/5.5/mingw492_32/include/QtGui -IC:/Qt/5.5/mingw492_32/include/QtANGLE -IC:/Qt/5.5/mingw492_32/include/QtSql -IC:/Qt/5.5/mingw492_32/include/QtCore mainwindow.h -o debug/moc_mainwindow.cpp
 
 debug/moc_dialog.cpp: C:/Qt/5.5/mingw492_32/include/QtWidgets/QDialog \
 		C:/Qt/5.5/mingw492_32/include/QtWidgets/qdialog.h \
@@ -461,7 +461,7 @@ debug/moc_dialog.cpp: C:/Qt/5.5/mingw492_32/include/QtWidgets/QDialog \
 		C:/Qt/5.5/mingw492_32/include/QtGui/qvector2d.h \
 		C:/Qt/5.5/mingw492_32/include/QtGui/qtouchdevice.h \
 		dialog.h
-	'C:\Qt\5.5\mingw492_32\bin\moc.exe' $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.5/mingw492_32/mkspecs/win32-g++ -I'C:/Users/jay/Desktop/rar/Cyber-Dragon-Repository(2)' -IC:/Qt/5.5/mingw492_32/include -IC:/Qt/5.5/mingw492_32/include/QtWidgets -IC:/Qt/5.5/mingw492_32/include/QtGui -IC:/Qt/5.5/mingw492_32/include/QtANGLE -IC:/Qt/5.5/mingw492_32/include/QtSql -IC:/Qt/5.5/mingw492_32/include/QtCore dialog.h -o debug/moc_dialog.cpp
+	'C:\Qt\5.5\mingw492_32\bin\moc.exe' $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.5/mingw492_32/mkspecs/win32-g++ -I'C:/Users/jay/Desktop/second attempt to reconcile two projects/Cyber-Dragon-Repository(2)' -IC:/Qt/5.5/mingw492_32/include -IC:/Qt/5.5/mingw492_32/include/QtWidgets -IC:/Qt/5.5/mingw492_32/include/QtGui -IC:/Qt/5.5/mingw492_32/include/QtANGLE -IC:/Qt/5.5/mingw492_32/include/QtSql -IC:/Qt/5.5/mingw492_32/include/QtCore dialog.h -o debug/moc_dialog.cpp
 
 debug/moc_customertestimonials.cpp: C:/Qt/5.5/mingw492_32/include/QtWidgets/QDialog \
 		C:/Qt/5.5/mingw492_32/include/QtWidgets/qdialog.h \
@@ -567,7 +567,7 @@ debug/moc_customertestimonials.cpp: C:/Qt/5.5/mingw492_32/include/QtWidgets/QDia
 		C:/Qt/5.5/mingw492_32/include/QtGui/qvector2d.h \
 		C:/Qt/5.5/mingw492_32/include/QtGui/qtouchdevice.h \
 		customertestimonials.h
-	'C:\Qt\5.5\mingw492_32\bin\moc.exe' $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.5/mingw492_32/mkspecs/win32-g++ -I'C:/Users/jay/Desktop/rar/Cyber-Dragon-Repository(2)' -IC:/Qt/5.5/mingw492_32/include -IC:/Qt/5.5/mingw492_32/include/QtWidgets -IC:/Qt/5.5/mingw492_32/include/QtGui -IC:/Qt/5.5/mingw492_32/include/QtANGLE -IC:/Qt/5.5/mingw492_32/include/QtSql -IC:/Qt/5.5/mingw492_32/include/QtCore customertestimonials.h -o debug/moc_customertestimonials.cpp
+	'C:\Qt\5.5\mingw492_32\bin\moc.exe' $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.5/mingw492_32/mkspecs/win32-g++ -I'C:/Users/jay/Desktop/second attempt to reconcile two projects/Cyber-Dragon-Repository(2)' -IC:/Qt/5.5/mingw492_32/include -IC:/Qt/5.5/mingw492_32/include/QtWidgets -IC:/Qt/5.5/mingw492_32/include/QtGui -IC:/Qt/5.5/mingw492_32/include/QtANGLE -IC:/Qt/5.5/mingw492_32/include/QtSql -IC:/Qt/5.5/mingw492_32/include/QtCore customertestimonials.h -o debug/moc_customertestimonials.cpp
 
 debug/moc_requestpamphlet.cpp: C:/Qt/5.5/mingw492_32/include/QtWidgets/QDialog \
 		C:/Qt/5.5/mingw492_32/include/QtWidgets/qdialog.h \
@@ -673,7 +673,7 @@ debug/moc_requestpamphlet.cpp: C:/Qt/5.5/mingw492_32/include/QtWidgets/QDialog \
 		C:/Qt/5.5/mingw492_32/include/QtGui/qvector2d.h \
 		C:/Qt/5.5/mingw492_32/include/QtGui/qtouchdevice.h \
 		requestpamphlet.h
-	'C:\Qt\5.5\mingw492_32\bin\moc.exe' $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.5/mingw492_32/mkspecs/win32-g++ -I'C:/Users/jay/Desktop/rar/Cyber-Dragon-Repository(2)' -IC:/Qt/5.5/mingw492_32/include -IC:/Qt/5.5/mingw492_32/include/QtWidgets -IC:/Qt/5.5/mingw492_32/include/QtGui -IC:/Qt/5.5/mingw492_32/include/QtANGLE -IC:/Qt/5.5/mingw492_32/include/QtSql -IC:/Qt/5.5/mingw492_32/include/QtCore requestpamphlet.h -o debug/moc_requestpamphlet.cpp
+	'C:\Qt\5.5\mingw492_32\bin\moc.exe' $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.5/mingw492_32/mkspecs/win32-g++ -I'C:/Users/jay/Desktop/second attempt to reconcile two projects/Cyber-Dragon-Repository(2)' -IC:/Qt/5.5/mingw492_32/include -IC:/Qt/5.5/mingw492_32/include/QtWidgets -IC:/Qt/5.5/mingw492_32/include/QtGui -IC:/Qt/5.5/mingw492_32/include/QtANGLE -IC:/Qt/5.5/mingw492_32/include/QtSql -IC:/Qt/5.5/mingw492_32/include/QtCore requestpamphlet.h -o debug/moc_requestpamphlet.cpp
 
 debug/moc_orderproduct.cpp: C:/Qt/5.5/mingw492_32/include/QtWidgets/QDialog \
 		C:/Qt/5.5/mingw492_32/include/QtWidgets/qdialog.h \
@@ -779,7 +779,7 @@ debug/moc_orderproduct.cpp: C:/Qt/5.5/mingw492_32/include/QtWidgets/QDialog \
 		C:/Qt/5.5/mingw492_32/include/QtGui/qvector2d.h \
 		C:/Qt/5.5/mingw492_32/include/QtGui/qtouchdevice.h \
 		orderproduct.h
-	'C:\Qt\5.5\mingw492_32\bin\moc.exe' $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.5/mingw492_32/mkspecs/win32-g++ -I'C:/Users/jay/Desktop/rar/Cyber-Dragon-Repository(2)' -IC:/Qt/5.5/mingw492_32/include -IC:/Qt/5.5/mingw492_32/include/QtWidgets -IC:/Qt/5.5/mingw492_32/include/QtGui -IC:/Qt/5.5/mingw492_32/include/QtANGLE -IC:/Qt/5.5/mingw492_32/include/QtSql -IC:/Qt/5.5/mingw492_32/include/QtCore orderproduct.h -o debug/moc_orderproduct.cpp
+	'C:\Qt\5.5\mingw492_32\bin\moc.exe' $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.5/mingw492_32/mkspecs/win32-g++ -I'C:/Users/jay/Desktop/second attempt to reconcile two projects/Cyber-Dragon-Repository(2)' -IC:/Qt/5.5/mingw492_32/include -IC:/Qt/5.5/mingw492_32/include/QtWidgets -IC:/Qt/5.5/mingw492_32/include/QtGui -IC:/Qt/5.5/mingw492_32/include/QtANGLE -IC:/Qt/5.5/mingw492_32/include/QtSql -IC:/Qt/5.5/mingw492_32/include/QtCore orderproduct.h -o debug/moc_orderproduct.cpp
 
 debug/moc_customerinfo.cpp: C:/Qt/5.5/mingw492_32/include/QtWidgets/QMainWindow \
 		C:/Qt/5.5/mingw492_32/include/QtWidgets/qmainwindow.h \
@@ -886,13 +886,8 @@ debug/moc_customerinfo.cpp: C:/Qt/5.5/mingw492_32/include/QtWidgets/QMainWindow 
 		C:/Qt/5.5/mingw492_32/include/QtGui/qtouchdevice.h \
 		C:/Qt/5.5/mingw492_32/include/QtWidgets/qtabwidget.h \
 		C:/Qt/5.5/mingw492_32/include/QtGui/qicon.h \
-		Customer.h \
-		sqlite3.h \
-		Purchase.h \
-		Date.h \
-		C:/Qt/5.5/mingw492_32/include/QtCore/QString \
 		customerinfo.h
-	'C:\Qt\5.5\mingw492_32\bin\moc.exe' $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.5/mingw492_32/mkspecs/win32-g++ -I'C:/Users/jay/Desktop/rar/Cyber-Dragon-Repository(2)' -IC:/Qt/5.5/mingw492_32/include -IC:/Qt/5.5/mingw492_32/include/QtWidgets -IC:/Qt/5.5/mingw492_32/include/QtGui -IC:/Qt/5.5/mingw492_32/include/QtANGLE -IC:/Qt/5.5/mingw492_32/include/QtSql -IC:/Qt/5.5/mingw492_32/include/QtCore customerinfo.h -o debug/moc_customerinfo.cpp
+	'C:\Qt\5.5\mingw492_32\bin\moc.exe' $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.5/mingw492_32/mkspecs/win32-g++ -I'C:/Users/jay/Desktop/second attempt to reconcile two projects/Cyber-Dragon-Repository(2)' -IC:/Qt/5.5/mingw492_32/include -IC:/Qt/5.5/mingw492_32/include/QtWidgets -IC:/Qt/5.5/mingw492_32/include/QtGui -IC:/Qt/5.5/mingw492_32/include/QtANGLE -IC:/Qt/5.5/mingw492_32/include/QtSql -IC:/Qt/5.5/mingw492_32/include/QtCore customerinfo.h -o debug/moc_customerinfo.cpp
 
 debug/moc_customerlist.cpp: C:/Qt/5.5/mingw492_32/include/QtWidgets/QMainWindow \
 		C:/Qt/5.5/mingw492_32/include/QtWidgets/qmainwindow.h \
@@ -1001,19 +996,19 @@ debug/moc_customerlist.cpp: C:/Qt/5.5/mingw492_32/include/QtWidgets/QMainWindow 
 		C:/Qt/5.5/mingw492_32/include/QtGui/qicon.h \
 		C:/Qt/5.5/mingw492_32/include/QtCore/QObject \
 		customerinfo.h \
+		Database.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/QMap \
+		C:/Qt/5.5/mingw492_32/include/QtCore/QSet \
+		C:/Qt/5.5/mingw492_32/include/QtCore/QDebug \
 		Customer.h \
 		sqlite3.h \
 		Purchase.h \
 		Date.h \
 		C:/Qt/5.5/mingw492_32/include/QtCore/QString \
-		Database.h \
-		C:/Qt/5.5/mingw492_32/include/QtCore/QMap \
-		C:/Qt/5.5/mingw492_32/include/QtCore/QSet \
-		C:/Qt/5.5/mingw492_32/include/QtCore/QDebug \
 		Testimonial.h \
 		sha1.h \
 		customerlist.h
-	'C:\Qt\5.5\mingw492_32\bin\moc.exe' $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.5/mingw492_32/mkspecs/win32-g++ -I'C:/Users/jay/Desktop/rar/Cyber-Dragon-Repository(2)' -IC:/Qt/5.5/mingw492_32/include -IC:/Qt/5.5/mingw492_32/include/QtWidgets -IC:/Qt/5.5/mingw492_32/include/QtGui -IC:/Qt/5.5/mingw492_32/include/QtANGLE -IC:/Qt/5.5/mingw492_32/include/QtSql -IC:/Qt/5.5/mingw492_32/include/QtCore customerlist.h -o debug/moc_customerlist.cpp
+	'C:\Qt\5.5\mingw492_32\bin\moc.exe' $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.5/mingw492_32/mkspecs/win32-g++ -I'C:/Users/jay/Desktop/second attempt to reconcile two projects/Cyber-Dragon-Repository(2)' -IC:/Qt/5.5/mingw492_32/include -IC:/Qt/5.5/mingw492_32/include/QtWidgets -IC:/Qt/5.5/mingw492_32/include/QtGui -IC:/Qt/5.5/mingw492_32/include/QtANGLE -IC:/Qt/5.5/mingw492_32/include/QtSql -IC:/Qt/5.5/mingw492_32/include/QtCore customerlist.h -o debug/moc_customerlist.cpp
 
 debug/moc_errorwindow.cpp: C:/Qt/5.5/mingw492_32/include/QtWidgets/QMainWindow \
 		C:/Qt/5.5/mingw492_32/include/QtWidgets/qmainwindow.h \
@@ -1121,7 +1116,7 @@ debug/moc_errorwindow.cpp: C:/Qt/5.5/mingw492_32/include/QtWidgets/QMainWindow \
 		C:/Qt/5.5/mingw492_32/include/QtWidgets/qtabwidget.h \
 		C:/Qt/5.5/mingw492_32/include/QtGui/qicon.h \
 		errorwindow.h
-	'C:\Qt\5.5\mingw492_32\bin\moc.exe' $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.5/mingw492_32/mkspecs/win32-g++ -I'C:/Users/jay/Desktop/rar/Cyber-Dragon-Repository(2)' -IC:/Qt/5.5/mingw492_32/include -IC:/Qt/5.5/mingw492_32/include/QtWidgets -IC:/Qt/5.5/mingw492_32/include/QtGui -IC:/Qt/5.5/mingw492_32/include/QtANGLE -IC:/Qt/5.5/mingw492_32/include/QtSql -IC:/Qt/5.5/mingw492_32/include/QtCore errorwindow.h -o debug/moc_errorwindow.cpp
+	'C:\Qt\5.5\mingw492_32\bin\moc.exe' $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.5/mingw492_32/mkspecs/win32-g++ -I'C:/Users/jay/Desktop/second attempt to reconcile two projects/Cyber-Dragon-Repository(2)' -IC:/Qt/5.5/mingw492_32/include -IC:/Qt/5.5/mingw492_32/include/QtWidgets -IC:/Qt/5.5/mingw492_32/include/QtGui -IC:/Qt/5.5/mingw492_32/include/QtANGLE -IC:/Qt/5.5/mingw492_32/include/QtSql -IC:/Qt/5.5/mingw492_32/include/QtCore errorwindow.h -o debug/moc_errorwindow.cpp
 
 debug/moc_removewindow.cpp: C:/Qt/5.5/mingw492_32/include/QtWidgets/QMainWindow \
 		C:/Qt/5.5/mingw492_32/include/QtWidgets/qmainwindow.h \
@@ -1241,7 +1236,7 @@ debug/moc_removewindow.cpp: C:/Qt/5.5/mingw492_32/include/QtWidgets/QMainWindow 
 		sha1.h \
 		errorwindow.h \
 		removewindow.h
-	'C:\Qt\5.5\mingw492_32\bin\moc.exe' $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.5/mingw492_32/mkspecs/win32-g++ -I'C:/Users/jay/Desktop/rar/Cyber-Dragon-Repository(2)' -IC:/Qt/5.5/mingw492_32/include -IC:/Qt/5.5/mingw492_32/include/QtWidgets -IC:/Qt/5.5/mingw492_32/include/QtGui -IC:/Qt/5.5/mingw492_32/include/QtANGLE -IC:/Qt/5.5/mingw492_32/include/QtSql -IC:/Qt/5.5/mingw492_32/include/QtCore removewindow.h -o debug/moc_removewindow.cpp
+	'C:\Qt\5.5\mingw492_32\bin\moc.exe' $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.5/mingw492_32/mkspecs/win32-g++ -I'C:/Users/jay/Desktop/second attempt to reconcile two projects/Cyber-Dragon-Repository(2)' -IC:/Qt/5.5/mingw492_32/include -IC:/Qt/5.5/mingw492_32/include/QtWidgets -IC:/Qt/5.5/mingw492_32/include/QtGui -IC:/Qt/5.5/mingw492_32/include/QtANGLE -IC:/Qt/5.5/mingw492_32/include/QtSql -IC:/Qt/5.5/mingw492_32/include/QtCore removewindow.h -o debug/moc_removewindow.cpp
 
 debug/moc_adminlogin.cpp: C:/Qt/5.5/mingw492_32/include/QtWidgets/QDialog \
 		C:/Qt/5.5/mingw492_32/include/QtWidgets/qdialog.h \
@@ -1365,7 +1360,7 @@ debug/moc_adminlogin.cpp: C:/Qt/5.5/mingw492_32/include/QtWidgets/QDialog \
 		C:/Qt/5.5/mingw492_32/include/QtCore/QObject \
 		customerinfo.h \
 		adminlogin.h
-	'C:\Qt\5.5\mingw492_32\bin\moc.exe' $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.5/mingw492_32/mkspecs/win32-g++ -I'C:/Users/jay/Desktop/rar/Cyber-Dragon-Repository(2)' -IC:/Qt/5.5/mingw492_32/include -IC:/Qt/5.5/mingw492_32/include/QtWidgets -IC:/Qt/5.5/mingw492_32/include/QtGui -IC:/Qt/5.5/mingw492_32/include/QtANGLE -IC:/Qt/5.5/mingw492_32/include/QtSql -IC:/Qt/5.5/mingw492_32/include/QtCore adminlogin.h -o debug/moc_adminlogin.cpp
+	'C:\Qt\5.5\mingw492_32\bin\moc.exe' $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.5/mingw492_32/mkspecs/win32-g++ -I'C:/Users/jay/Desktop/second attempt to reconcile two projects/Cyber-Dragon-Repository(2)' -IC:/Qt/5.5/mingw492_32/include -IC:/Qt/5.5/mingw492_32/include/QtWidgets -IC:/Qt/5.5/mingw492_32/include/QtGui -IC:/Qt/5.5/mingw492_32/include/QtANGLE -IC:/Qt/5.5/mingw492_32/include/QtSql -IC:/Qt/5.5/mingw492_32/include/QtCore adminlogin.h -o debug/moc_adminlogin.cpp
 
 debug/moc_contactus.cpp: C:/Qt/5.5/mingw492_32/include/QtWidgets/QDialog \
 		C:/Qt/5.5/mingw492_32/include/QtWidgets/qdialog.h \
@@ -1471,7 +1466,7 @@ debug/moc_contactus.cpp: C:/Qt/5.5/mingw492_32/include/QtWidgets/QDialog \
 		C:/Qt/5.5/mingw492_32/include/QtGui/qvector2d.h \
 		C:/Qt/5.5/mingw492_32/include/QtGui/qtouchdevice.h \
 		contactus.h
-	'C:\Qt\5.5\mingw492_32\bin\moc.exe' $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.5/mingw492_32/mkspecs/win32-g++ -I'C:/Users/jay/Desktop/rar/Cyber-Dragon-Repository(2)' -IC:/Qt/5.5/mingw492_32/include -IC:/Qt/5.5/mingw492_32/include/QtWidgets -IC:/Qt/5.5/mingw492_32/include/QtGui -IC:/Qt/5.5/mingw492_32/include/QtANGLE -IC:/Qt/5.5/mingw492_32/include/QtSql -IC:/Qt/5.5/mingw492_32/include/QtCore contactus.h -o debug/moc_contactus.cpp
+	'C:\Qt\5.5\mingw492_32\bin\moc.exe' $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.5/mingw492_32/mkspecs/win32-g++ -I'C:/Users/jay/Desktop/second attempt to reconcile two projects/Cyber-Dragon-Repository(2)' -IC:/Qt/5.5/mingw492_32/include -IC:/Qt/5.5/mingw492_32/include/QtWidgets -IC:/Qt/5.5/mingw492_32/include/QtGui -IC:/Qt/5.5/mingw492_32/include/QtANGLE -IC:/Qt/5.5/mingw492_32/include/QtSql -IC:/Qt/5.5/mingw492_32/include/QtCore contactus.h -o debug/moc_contactus.cpp
 
 debug/moc_programinstructions.cpp: C:/Qt/5.5/mingw492_32/include/QtWidgets/QDialog \
 		C:/Qt/5.5/mingw492_32/include/QtWidgets/qdialog.h \
@@ -1577,7 +1572,7 @@ debug/moc_programinstructions.cpp: C:/Qt/5.5/mingw492_32/include/QtWidgets/QDial
 		C:/Qt/5.5/mingw492_32/include/QtGui/qvector2d.h \
 		C:/Qt/5.5/mingw492_32/include/QtGui/qtouchdevice.h \
 		programinstructions.h
-	'C:\Qt\5.5\mingw492_32\bin\moc.exe' $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.5/mingw492_32/mkspecs/win32-g++ -I'C:/Users/jay/Desktop/rar/Cyber-Dragon-Repository(2)' -IC:/Qt/5.5/mingw492_32/include -IC:/Qt/5.5/mingw492_32/include/QtWidgets -IC:/Qt/5.5/mingw492_32/include/QtGui -IC:/Qt/5.5/mingw492_32/include/QtANGLE -IC:/Qt/5.5/mingw492_32/include/QtSql -IC:/Qt/5.5/mingw492_32/include/QtCore programinstructions.h -o debug/moc_programinstructions.cpp
+	'C:\Qt\5.5\mingw492_32\bin\moc.exe' $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.5/mingw492_32/mkspecs/win32-g++ -I'C:/Users/jay/Desktop/second attempt to reconcile two projects/Cyber-Dragon-Repository(2)' -IC:/Qt/5.5/mingw492_32/include -IC:/Qt/5.5/mingw492_32/include/QtWidgets -IC:/Qt/5.5/mingw492_32/include/QtGui -IC:/Qt/5.5/mingw492_32/include/QtANGLE -IC:/Qt/5.5/mingw492_32/include/QtSql -IC:/Qt/5.5/mingw492_32/include/QtCore programinstructions.h -o debug/moc_programinstructions.cpp
 
 debug/moc_customerpurchase.cpp: C:/Qt/5.5/mingw492_32/include/QtWidgets/QDialog \
 		C:/Qt/5.5/mingw492_32/include/QtWidgets/qdialog.h \
@@ -1688,13 +1683,13 @@ debug/moc_customerpurchase.cpp: C:/Qt/5.5/mingw492_32/include/QtWidgets/QDialog 
 		Date.h \
 		C:/Qt/5.5/mingw492_32/include/QtCore/QString \
 		customerpurchase.h
-	'C:\Qt\5.5\mingw492_32\bin\moc.exe' $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.5/mingw492_32/mkspecs/win32-g++ -I'C:/Users/jay/Desktop/rar/Cyber-Dragon-Repository(2)' -IC:/Qt/5.5/mingw492_32/include -IC:/Qt/5.5/mingw492_32/include/QtWidgets -IC:/Qt/5.5/mingw492_32/include/QtGui -IC:/Qt/5.5/mingw492_32/include/QtANGLE -IC:/Qt/5.5/mingw492_32/include/QtSql -IC:/Qt/5.5/mingw492_32/include/QtCore customerpurchase.h -o debug/moc_customerpurchase.cpp
+	'C:\Qt\5.5\mingw492_32\bin\moc.exe' $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.5/mingw492_32/mkspecs/win32-g++ -I'C:/Users/jay/Desktop/second attempt to reconcile two projects/Cyber-Dragon-Repository(2)' -IC:/Qt/5.5/mingw492_32/include -IC:/Qt/5.5/mingw492_32/include/QtWidgets -IC:/Qt/5.5/mingw492_32/include/QtGui -IC:/Qt/5.5/mingw492_32/include/QtANGLE -IC:/Qt/5.5/mingw492_32/include/QtSql -IC:/Qt/5.5/mingw492_32/include/QtCore customerpurchase.h -o debug/moc_customerpurchase.cpp
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_mainwindow.h ui_dialog.h ui_maintenanceplan.h ui_customertestimonials.h ui_requestpamphlet.h ui_orderproduct.h ui_addcustomerwindow.h ui_customerlist.h ui_errorwindow.h ui_removewindow.h ui_adminlogin.h ui_contactus.h ui_programinstructions.h ui_customerpurchase.h ui_customerinfo.h
+compiler_uic_make_all: ui_mainwindow.h ui_dialog.h ui_maintenanceplan.h ui_customertestimonials.h ui_requestpamphlet.h ui_orderproduct.h ui_addcustomerwindow.h ui_customerinfo.h ui_customerlist.h ui_errorwindow.h ui_removewindow.h ui_adminlogin.h ui_contactus.h ui_programinstructions.h ui_customerpurchase.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_mainwindow.h ui_dialog.h ui_maintenanceplan.h ui_customertestimonials.h ui_requestpamphlet.h ui_orderproduct.h ui_addcustomerwindow.h ui_customerlist.h ui_errorwindow.h ui_removewindow.h ui_adminlogin.h ui_contactus.h ui_programinstructions.h ui_customerpurchase.h ui_customerinfo.h
+	-$(DEL_FILE) ui_mainwindow.h ui_dialog.h ui_maintenanceplan.h ui_customertestimonials.h ui_requestpamphlet.h ui_orderproduct.h ui_addcustomerwindow.h ui_customerinfo.h ui_customerlist.h ui_errorwindow.h ui_removewindow.h ui_adminlogin.h ui_contactus.h ui_programinstructions.h ui_customerpurchase.h
 ui_mainwindow.h: mainwindow.ui
 	'C:\Qt\5.5\mingw492_32\bin\uic.exe' mainwindow.ui -o ui_mainwindow.h
 
@@ -1716,6 +1711,9 @@ ui_orderproduct.h: orderproduct.ui
 ui_addcustomerwindow.h: addcustomerwindow.ui
 	'C:\Qt\5.5\mingw492_32\bin\uic.exe' addcustomerwindow.ui -o ui_addcustomerwindow.h
 
+ui_customerinfo.h: customerinfo.ui
+	'C:\Qt\5.5\mingw492_32\bin\uic.exe' customerinfo.ui -o ui_customerinfo.h
+
 ui_customerlist.h: customerlist.ui
 	'C:\Qt\5.5\mingw492_32\bin\uic.exe' customerlist.ui -o ui_customerlist.h
 
@@ -1736,9 +1734,6 @@ ui_programinstructions.h: programinstructions.ui
 
 ui_customerpurchase.h: customerpurchase.ui
 	'C:\Qt\5.5\mingw492_32\bin\uic.exe' customerpurchase.ui -o ui_customerpurchase.h
-
-ui_customerinfo.h: customerinfo.ui
-	'C:\Qt\5.5\mingw492_32\bin\uic.exe' customerinfo.ui -o ui_customerinfo.h
 
 compiler_yacc_decl_make_all:
 compiler_yacc_decl_clean:
@@ -2987,15 +2982,15 @@ debug/addcustomerwindow.o: addcustomerwindow.cpp addcustomerwindow.h \
 		customerlist.h \
 		C:/Qt/5.5/mingw492_32/include/QtCore/QObject \
 		customerinfo.h \
+		Database.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/QMap \
+		C:/Qt/5.5/mingw492_32/include/QtCore/QSet \
+		C:/Qt/5.5/mingw492_32/include/QtCore/QDebug \
 		Customer.h \
 		sqlite3.h \
 		Purchase.h \
 		Date.h \
 		C:/Qt/5.5/mingw492_32/include/QtCore/QString \
-		Database.h \
-		C:/Qt/5.5/mingw492_32/include/QtCore/QMap \
-		C:/Qt/5.5/mingw492_32/include/QtCore/QSet \
-		C:/Qt/5.5/mingw492_32/include/QtCore/QDebug \
 		Testimonial.h \
 		sha1.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug/addcustomerwindow.o addcustomerwindow.cpp
@@ -3106,11 +3101,6 @@ debug/customerinfo.o: customerinfo.cpp customerinfo.h \
 		C:/Qt/5.5/mingw492_32/include/QtGui/qtouchdevice.h \
 		C:/Qt/5.5/mingw492_32/include/QtWidgets/qtabwidget.h \
 		C:/Qt/5.5/mingw492_32/include/QtGui/qicon.h \
-		Customer.h \
-		sqlite3.h \
-		Purchase.h \
-		Date.h \
-		C:/Qt/5.5/mingw492_32/include/QtCore/QString \
 		ui_customerinfo.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug/customerinfo.o customerinfo.cpp
 
@@ -3222,15 +3212,15 @@ debug/customerlist.o: customerlist.cpp customerlist.h \
 		C:/Qt/5.5/mingw492_32/include/QtGui/qicon.h \
 		C:/Qt/5.5/mingw492_32/include/QtCore/QObject \
 		customerinfo.h \
+		Database.h \
+		C:/Qt/5.5/mingw492_32/include/QtCore/QMap \
+		C:/Qt/5.5/mingw492_32/include/QtCore/QSet \
+		C:/Qt/5.5/mingw492_32/include/QtCore/QDebug \
 		Customer.h \
 		sqlite3.h \
 		Purchase.h \
 		Date.h \
 		C:/Qt/5.5/mingw492_32/include/QtCore/QString \
-		Database.h \
-		C:/Qt/5.5/mingw492_32/include/QtCore/QMap \
-		C:/Qt/5.5/mingw492_32/include/QtCore/QSet \
-		C:/Qt/5.5/mingw492_32/include/QtCore/QDebug \
 		Testimonial.h \
 		sha1.h \
 		ui_customerlist.h \

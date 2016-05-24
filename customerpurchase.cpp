@@ -37,7 +37,7 @@ void customerPurchase::on_comboBox_currentIndexChanged( const QString &arg1)
 
    // QString text = ui->comboBox->GetItemText(this.comboBox.SelectedItem);
     QString text = ui->comboBox->currentText();
-   /* Service service;
+    /*Service service;
     if(text == "Basic Security"){
         service = 0;
     }

@@ -68,14 +68,14 @@ FORMS    += mainwindow.ui \
     requestpamphlet.ui \
     orderproduct.ui \
     addcustomerwindow.ui \
+    customerinfo.ui \
     customerlist.ui \
     errorwindow.ui \
     removewindow.ui \
     adminlogin.ui \
     contactus.ui \
     programinstructions.ui \
-    customerpurchase.ui \
-    customerinfo.ui
+    customerpurchase.ui
 
 DISTFILES += \
     customers.txt \
