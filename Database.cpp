@@ -79,8 +79,13 @@ void Database::AddCustomer(QString  name,
             << state .toStdString()        << "', '"
             << zip.toStdString()           << "')";
 
+    qDebug() << customer.str().c_str() << endl;
+    qDebug() << address.str().c_str() << endl;
+
     char* errMsg;
     sqlite3_exec(connection, customer.str().c_str(), NULL, 0, &errMsg);
+
+
 
     if(errMsg != NULL){
         cerr << errMsg;

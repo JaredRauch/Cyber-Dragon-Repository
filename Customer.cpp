@@ -40,13 +40,13 @@ QString Customer::getAddress() const{
     ostringstream oss;
     oss << getStreetAddress().toStdString() << endl;
     oss << getCity().toStdString();
-    
+
     if(getCity() != "DC" && getCity() != "D.C."){
         oss << ", " << getState().toStdString();
     }
-    
+
     oss << " " << getZip().toStdString();
-    
+
     return QString(oss.str().c_str());
 }
 
