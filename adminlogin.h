@@ -8,7 +8,9 @@
 namespace Ui {
 class adminLogin;
 }
-
+/*!
+ * \brief The adminLogin class
+ */
 class adminLogin : public QDialog
 {
     Q_OBJECT

@@ -7,7 +7,9 @@
 namespace Ui {
 class CustomerInfo;
 }
-
+/*!
+ * brief- customerInfo Class
+ */
 class CustomerInfo : public QMainWindow
 {
     Q_OBJECT

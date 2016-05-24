@@ -1,7 +1,10 @@
 #include "addcustomerwindow.h"
 #include "ui_addcustomerwindow.h"
 #include "QDebug"
-
+/*!
+ *
+ * @param parent
+ */
 AddCustomerWindow::AddCustomerWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::AddCustomerWindow)
@@ -17,12 +20,16 @@ AddCustomerWindow::~AddCustomerWindow()
 
     delete db;
 }
-
+/*!
+ * brief rejection in AddCustomer Window
+ */
 void AddCustomerWindow::on_rejectButton_clicked()
 {
     hide();
 }
-
+/*!
+ * brief - Add Customer Clicked
+ */
 void AddCustomerWindow::on_acceptButton_clicked()
 {
     //try{
@@ -112,7 +119,9 @@ void AddCustomerWindow::on_acceptButton_clicked()
 
     }*/
 }
-
+/*!
+ * brief Not Interested button
+ */
 void AddCustomerWindow::on_not_interested_radio_clicked()
 {
 
@@ -120,14 +129,18 @@ void AddCustomerWindow::on_not_interested_radio_clicked()
 
     ui->very_interested_radio->setCheckState(Qt::Unchecked);
 }
-
+/*!
+ * brief- Add Customer Window -  some interested clicked
+ */
 void AddCustomerWindow::on_some_interested_radio_clicked()
 {
     ui->not_interested_radio->setCheckState(Qt::Unchecked);
 
     ui->very_interested_radio->setCheckState(Qt::Unchecked);
 }
-
+/*!
+ * brief- very interested
+ */
 void AddCustomerWindow::on_very_interested_radio_clicked()
 {
     ui->not_interested_radio->setCheckState(Qt::Unchecked);

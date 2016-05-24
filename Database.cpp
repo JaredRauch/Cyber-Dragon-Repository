@@ -1,6 +1,9 @@
 #include "Database.h"
 #include <QDebug>
-
+/*!
+ *
+ * @param databaseName
+ */
 Database::Database(QString databaseName){
     sqlite3_open(databaseName.toStdString().c_str(), &connection);
 }
@@ -8,7 +11,12 @@ Database::Database(QString databaseName){
 Database::~Database(){
     sqlite3_close(connection);
 }
-
+/*!
+ *
+ * @param username
+ * @param password
+ * @return
+ */
 Customer* Database::loginAsCustomer(QString username, QString password){
     unsigned* digest = encryptPassword(password);
     Customer* customer;
@@ -30,7 +38,12 @@ Customer* Database::loginAsCustomer(QString username, QString password){
 
     return customer;
 }
-
+/*!
+ *
+ * @param username
+ * @param password
+ * @return
+ */
 QMap<QString, Customer>* Database::loginAsAdmin(QString username, QString password){
     unsigned* digest = encryptPassword(password);
     QMap<QString, Customer>* customerMap = new QMap<QString, Customer>();
@@ -56,7 +69,16 @@ QMap<QString, Customer>* Database::loginAsAdmin(QString username, QString passwo
 
     return customerMap;
 }
-
+/*!
+ *
+ * @param name
+ * @param streetAddress
+ * @param city
+ * @param state
+ * @param zip
+ * @param interest
+ * @param isKey
+ */
 void Database::AddCustomer(QString  name,
                      QString  streetAddress, QString city, QString state, QString zip,
                      Interest interest,
@@ -93,7 +115,10 @@ void Database::AddCustomer(QString  name,
         }
     }
 }
-
+/*!
+ *
+ * @param password
+ */
 unsigned* Database::encryptPassword(QString password) const{
     SHA1 encryption;
     unsigned* digest = new unsigned[5];
@@ -114,7 +139,12 @@ unsigned* Database::encryptPassword(QString password) const{
 
     return digest;
 }
-
+/*!
+ *
+ * @param username
+ * @param digest
+ * @return
+ */
 bool Database::validateCustomerLogin(QString username, unsigned* digest) const{
     ostringstream sqlCmmd;
     sqlCmmd << "SELECT count(*) FROM ics_customer_logins WHERE "
@@ -132,7 +162,12 @@ bool Database::validateCustomerLogin(QString username, unsigned* digest) const{
 
     return rc == SQLITE_ROW && sqlite3_column_int(stmt, 0) == 1;
 }
-
+/*!
+ *
+ * @param username
+ * @param digest
+ * @return
+ */
 bool Database::validateAdminLogin(QString username, unsigned* digest) const{
     ostringstream sqlCmmd;
     sqlCmmd << "SELECT count(*) FROM ics_admin_logins WHERE "
@@ -149,7 +184,13 @@ bool Database::validateAdminLogin(QString username, unsigned* digest) const{
 
     return sqlite3_column_int(stmt, 0) == 1;
 }
-
+/*!
+ *
+ * @param table
+ * @param field
+ * @param value
+ * @return
+ */
 bool Database::checkKeyCollision(string table, string field, string value) const{
     ostringstream sqlCmmd;
     sqlCmmd << "SELECT count(*) FROM "
@@ -163,7 +204,12 @@ bool Database::checkKeyCollision(string table, string field, string value) const
     sqlite3_step(stmt);
     return sqlite3_column_int(stmt, 0) == 1;
 }
-
+/*!
+ *
+ * @param username
+ * @param password
+ * @param customer
+ */
 void Database::registerCustomer(QString username, QString password, QString customer){
     unsigned* digest = encryptPassword(password);
 
@@ -190,7 +236,11 @@ void Database::registerCustomer(QString username, QString password, QString cust
         cerr << errMsg << endl;
     }
 }
-
+/*!
+ *
+ * @param username
+ * @param password
+ */
 void Database::registerAdmin(QString username, QString password){
     unsigned* digest = encryptPassword(password);
 

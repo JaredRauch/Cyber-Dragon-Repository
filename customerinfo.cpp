@@ -1,6 +1,10 @@
 #include "customerinfo.h"
 #include "ui_customerinfo.h"
-
+/*!
+ *
+ * @param customer
+ * @param parent
+ */
 CustomerInfo::CustomerInfo(Customer& customer, QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::CustomerInfo)

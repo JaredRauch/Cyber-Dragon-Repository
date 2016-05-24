@@ -20,7 +20,9 @@
 #include "Purchase.h"
 
 enum Interest{NOT_INTERESTED, SOMEWHAT_INTERESTED, VERY_INTERESTED};
-
+/*!
+ * brief- Customer Class
+ */
 class Customer{
 private:
     sqlite3* db;

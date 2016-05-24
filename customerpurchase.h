@@ -7,7 +7,9 @@
 namespace Ui {
 class customerPurchase;
 }
-
+/*!
+ * brief customer purchase
+ */
 class customerPurchase : public QDialog
 {
     Q_OBJECT

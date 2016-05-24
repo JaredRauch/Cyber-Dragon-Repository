@@ -2,11 +2,15 @@
 #define CONTACTUS_H
 
 #include <QDialog>
-
+/*!
+ * -brief Contact Us Class
+ */
 namespace Ui {
 class ContactUs;
 }
-
+/*!
+ * \brief The ContactUs class
+ */
 class ContactUs : public QDialog
 {
     Q_OBJECT

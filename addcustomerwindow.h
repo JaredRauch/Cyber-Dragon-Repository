@@ -5,10 +5,15 @@
 #include "errorwindow.h"
 #include "Database.h"
 
+/*!
+ * \brief The AddCustomerWindow class
+ */
 namespace Ui {
 class AddCustomerWindow;
 }
-
+/*!
+ * \brief The AddCustomerWindow class
+ */
 class AddCustomerWindow : public QMainWindow
 {
     Q_OBJECT

@@ -4,9 +4,14 @@
 #include <QDialog>
 
 namespace Ui {
+/*!
+ * brief Program Instructions
+ */
 class ProgramInstructions;
 }
-
+/*!
+ * \brief The ProgramInstructions class
+ */
 class ProgramInstructions : public QDialog
 {
     Q_OBJECT

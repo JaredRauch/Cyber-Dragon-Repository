@@ -6,7 +6,9 @@
 namespace Ui {
 class CustomerTestimonials;
 }
-
+/*!
+ *  brief Customer Testimonials
+ */
 class CustomerTestimonials : public QDialog
 {
     Q_OBJECT

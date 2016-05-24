@@ -1,6 +1,9 @@
 #include "contactus.h"
 #include "ui_contactus.h"
-
+/*!
+ *
+ * @param parent
+ */
 ContactUs::ContactUs(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::ContactUs)

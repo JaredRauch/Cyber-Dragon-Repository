@@ -1,7 +1,11 @@
 #include "customerlist.h"
 #include "ui_customerlist.h"
 #include <QDebug>
-
+/*!
+ *
+ * @param customerMap
+ * @param parent
+ */
 CustomerList::CustomerList(QMap<QString, Customer>* customerMap, QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::CustomerList)
@@ -74,14 +78,20 @@ CustomerList::~CustomerList()
 {
     delete ui;
 }
-
+/*!
+ * brief Add Button
+ */
 void CustomerList::on_AddButton_clicked()
 {
     AddCustomerWindow *window = new AddCustomerWindow(this);
 
     window->show();
 }
-
+/*!
+ *
+ * @param row
+ * @param column
+ */
 void CustomerList::on_CustomerWidget_cellClicked(int row, int column)
 {
     selectedRow = row;
@@ -93,7 +103,9 @@ void CustomerList::on_CustomerWidget_cellClicked(int row, int column)
     ui->RemoveButton->setEnabled(true);
 }
 
-
+/*!
+ *
+ */
 void CustomerList::on_InfoButton_clicked()
 {
     if(selectedRow >= 0 && selectedColumn >= 0){

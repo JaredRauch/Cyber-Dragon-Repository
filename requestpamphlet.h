@@ -6,7 +6,9 @@
 namespace Ui {
 class RequestPamphlet;
 }
-
+/*!
+ * brief Request Pamphlet Class
+ */
 class RequestPamphlet : public QDialog
 {
     Q_OBJECT

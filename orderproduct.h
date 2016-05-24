@@ -6,7 +6,9 @@
 namespace Ui {
 class OrderProduct;
 }
-
+/*!
+ * brief Order Product Class
+ */
 class OrderProduct : public QDialog
 {
     Q_OBJECT

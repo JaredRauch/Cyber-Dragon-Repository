@@ -11,7 +11,9 @@
 namespace Ui {
 class CustomerList;
 }
-
+/*!
+ * brief customer list class
+ */
 class CustomerList : public QMainWindow
 {
     Q_OBJECT

@@ -1,6 +1,10 @@
 #include "adminlogin.h"
 #include "ui_adminlogin.h"
-
+/*!
+ *
+ * @param db
+ * @param parent
+ */
 adminLogin::adminLogin(Database *db, QWidget *parent) :
     QDialog(parent),
     ui(new Ui::adminLogin)
@@ -17,10 +21,15 @@ adminLogin::~adminLogin()
     delete ui;
 }
 
+/*!
+ * Basic login for testing with validation
+ * Idea being once logged in, hide the login box and show account details panel in its place
+ *
+ */
 
-//Basic login for testing with validation
-//Idea being once logged in, hide the login box and show account details panel in its place
-
+/*!
+ * brief admin login pushbotton
+ */
 void adminLogin::on_pushButton_clicked()
 {
     QString username;

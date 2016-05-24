@@ -1,6 +1,9 @@
 #include "customertestimonials.h"
 #include "ui_customertestimonials.h"
-
+/*!
+ *
+ * @param parent
+ */
 CustomerTestimonials::CustomerTestimonials(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::CustomerTestimonials)
@@ -17,7 +20,9 @@ CustomerTestimonials::~CustomerTestimonials()
 {
     delete ui;
 }
-
+/*!
+ * brief Testimonials
+ */
 void CustomerTestimonials::on_pushButton_clicked()
 {
 

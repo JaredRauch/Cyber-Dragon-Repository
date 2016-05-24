@@ -1,6 +1,9 @@
 #include "removewindow.h"
 #include "ui_removewindow.h"
-
+/*!
+ *
+ * @param parent
+ */
 RemoveWindow::RemoveWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::RemoveWindow)
@@ -9,12 +12,16 @@ RemoveWindow::RemoveWindow(QWidget *parent) :
 
     db = new Database("ICyberSecurity.sqlite");
 }
-
+/*!
+ * brief Destructor
+ */
 RemoveWindow::~RemoveWindow()
 {
     delete ui;
 }
-
+/*!
+ * brief Conform Box
+ */
 void RemoveWindow::on_ConformBox_accepted()
 {
    // try
@@ -39,7 +46,9 @@ void RemoveWindow::on_ConformBox_accepted()
    // }
 
 }
-
+/*!
+ * brief reject box
+ */
 void RemoveWindow::on_ConformBox_rejected()
 {
     hide();

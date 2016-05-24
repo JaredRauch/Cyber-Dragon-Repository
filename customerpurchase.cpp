@@ -10,6 +10,11 @@
 #include <QMessageBox>
 #include <QWidget>
 
+/*!
+ *
+ * @param customerMap
+ * @param parent
+ */
 customerPurchase::customerPurchase(QMap<QString, Customer>* customerMap, QWidget *parent) :
     QDialog(parent),
     ui(new Ui::customerPurchase)
@@ -26,7 +31,10 @@ customerPurchase::~customerPurchase()
 {
     delete ui;
 }
-
+/*!
+ *
+ * @param arg1
+ */
 void customerPurchase::on_comboBox_currentIndexChanged( const QString &arg1)
 {
     ui->tableWidget->setRowCount(row+1);

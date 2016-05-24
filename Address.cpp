@@ -7,49 +7,80 @@
 #include <vector>
 
 #include "Address.h"
-
+/*!
+ * address class
+ */
 Address::Address(){
     db = NULL;
     customer = "";
 }
-
+/*!
+ *
+ * @param db
+ * @param customer
+ */
 Address::Address(sqlite3* db, QString customer){
     this->db = db;
     this->customer = customer;
 }
-
+/*!
+ *
+ * @return
+ */
 QString Address::getStreetAddress() const{
     return searchDB("a_street_address");
 }
-
+/*!
+ *
+ * @return
+ */
 QString Address::getCity() const{
     return searchDB("a_city");
 }
-
+/*!
+ *
+ */
 QString Address::getState() const{
     return searchDB("a_state");
 }
-
+/*!
+ *
+ * @return
+ */
 QString Address::getZip() const{
     return searchDB("a_zip");
 }
-
+/*!
+ *
+ * @param streetAddress
+ */
 void Address::setStreetAddress(QString streetAddress){
     updateField("a_street_address", streetAddress);
 }
-
+/*!
+ *
+ * @param city
+ */
 void Address::setCity(QString city){
     updateField("a_city", city);
 }
-
+/*!
+ *
+ * @param state
+ */
 void Address::setState(QString state){
     updateField("a_state", state);
 }
-
+/*!
+ *
+ */
 void Address::setZip(QString zip){
     updateField("a_zip", zip);
 }
-    
+/*!
+ *
+ * @return
+ */
 QString Address::toString() const{
     ostringstream oss;
     
@@ -67,7 +98,11 @@ QString Address::toString() const{
     
     return QString::fromStdString(oss.str());
 }
-
+/*!
+ *
+ * @param field
+ * @return
+ */
 QString Address::searchDB(const char* field) const{
     ostringstream sqlCmmd;
     sqlCmmd << "SELECT "
@@ -88,7 +123,11 @@ QString Address::searchDB(const char* field) const{
         return "";
     }
 }
-
+/*!
+ *
+ * @param field
+ * @param value
+ */
 void Address::updateField(const char* field, QString value){
     char* errMsg;
     

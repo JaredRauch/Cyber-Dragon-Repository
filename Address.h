@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-/* 
+/*
  * File:   Address.h
  * Author: james
  *
@@ -19,7 +19,9 @@
 #include <QString>
 #include "sqlite3.h"
 using namespace std;
-
+/*!
+ * \brief The Address class
+ */
 class Address{
     sqlite3* db;
     QString customer;
