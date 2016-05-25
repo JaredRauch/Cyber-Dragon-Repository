@@ -1,5 +1,9 @@
 #include "customerinfo.h"
 #include "ui_customerinfo.h"
+
+//! A constructor
+/*! Constructor that searches for the customer clicked in the table widget and displays
+the information about the customer. */
 /*!
  *
  * @param customer

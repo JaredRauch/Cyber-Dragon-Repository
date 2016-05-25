@@ -1,8 +1,10 @@
 #include "customerlist.h"
 #include "ui_customerlist.h"
 #include <QDebug>
+//! A Constructor
+/*! This Constructor creates and streaches the columns in the tablewidget and adds
+ the customers to the table widget. */
 /*!
- *
  * @param customerMap
  * @param parent
  */
@@ -78,8 +80,10 @@ CustomerList::~CustomerList()
 {
     delete ui;
 }
+
+//! on_AddButton_clicked
 /*!
- * brief Add Button
+ * brief Signal that opens the add customer window for the user
  */
 void CustomerList::on_AddButton_clicked()
 {
@@ -87,7 +91,11 @@ void CustomerList::on_AddButton_clicked()
 
     window->show();
 }
+
+//! on_CustomerWidget_cellclicked
 /*!
+ *
+ * brief Signal that emits after the user clicks an item displayed in the table widget
  *
  * @param row
  * @param column
@@ -103,8 +111,10 @@ void CustomerList::on_CustomerWidget_cellClicked(int row, int column)
     ui->RemoveButton->setEnabled(true);
 }
 
+//! on_InfoButton_clicked()
 /*!
- *
+ * brief Signal that opens the customer information window for the user once the
+info button is clicked
  */
 void CustomerList::on_InfoButton_clicked()
 {

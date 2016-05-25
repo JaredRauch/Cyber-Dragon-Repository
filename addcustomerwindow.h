@@ -5,14 +5,14 @@
 #include "errorwindow.h"
 #include "Database.h"
 
-/*!
- * \brief The AddCustomerWindow class
- */
+
 namespace Ui {
 class AddCustomerWindow;
 }
+
+//! AddCustomerWindow Class
 /*!
- * \brief The AddCustomerWindow class
+ A window class that displays the line edits for the user to input to add a customer.
  */
 class AddCustomerWindow : public QMainWindow
 {
@@ -39,9 +39,9 @@ private slots:
     void on_very_interested_radio_clicked();
 
 private:
-    Ui::AddCustomerWindow *ui;
+    Ui::AddCustomerWindow *ui;	/*!< Pointer that allows clients to access all methods inherited from the QMainWindow class */
 
-    Database *db;
+    Database *db;		/*!< Pointer that accesses to methods available from the Database class */
 };
 
 #endif // ADDCUSTOMERWINDOW_H

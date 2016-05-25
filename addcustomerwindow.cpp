@@ -1,7 +1,10 @@
 #include "addcustomerwindow.h"
 #include "ui_addcustomerwindow.h"
 #include "QDebug"
-/*!
+
+//! A constructor
+/*! Sets up the ui and database pointer once this class's object is constructed*/
+/*! 
  *
  * @param parent
  */
@@ -20,15 +23,17 @@ AddCustomerWindow::~AddCustomerWindow()
 
     delete db;
 }
+
+//! 
 /*!
- * brief rejection in AddCustomer Window
+ * brief rejection signal in AddCustomer Window
  */
 void AddCustomerWindow::on_rejectButton_clicked()
 {
     hide();
 }
 /*!
- * brief - Add Customer Clicked
+ * brief - Adds Customer to the customer list's tablewidget.
  */
 void AddCustomerWindow::on_acceptButton_clicked()
 {
@@ -130,7 +135,7 @@ void AddCustomerWindow::on_not_interested_radio_clicked()
     ui->very_interested_radio->setCheckState(Qt::Unchecked);
 }
 /*!
- * brief- Add Customer Window -  some interested clicked
+ * brief Some interested button
  */
 void AddCustomerWindow::on_some_interested_radio_clicked()
 {
@@ -139,7 +144,7 @@ void AddCustomerWindow::on_some_interested_radio_clicked()
     ui->very_interested_radio->setCheckState(Qt::Unchecked);
 }
 /*!
- * brief- very interested
+ * brief- very interested button
  */
 void AddCustomerWindow::on_very_interested_radio_clicked()
 {
