@@ -31,8 +31,8 @@ CustomerInfo::CustomerInfo(Customer& customer, QWidget *parent) :
         ui->isKeyLabel->setText("Is Not Key");
     }
     
-    ui->purchases->horizontalHeader()->setStretchLastSection(true);
-    ui->purchases->horizontalHeader()->setStretchLastSection(true);
+    //ui->purchases->horizontalHeader()->setStretchLastSection(true);
+    //ui->purchases->horizontalHeader()->setStretchLastSection(true);
     list<Purchase>* purchaseList = customer.getPurchases();
     list<Purchase>::iterator it = purchaseList->begin();
     while(it != purchaseList->end()){

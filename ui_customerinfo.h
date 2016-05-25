@@ -19,6 +19,7 @@
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QScrollArea>
 #include <QtWidgets/QStatusBar>
+#include <QtWidgets/QTableWidget>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -30,9 +31,10 @@ public:
     QScrollArea *scrollArea;
     QWidget *scrollAreaWidgetContents;
     QLabel *nameLabel;
+    QTableWidget *tableWidget;
     QLabel *addressLabel;
-    QLabel *productLabel;
-    QLabel *testimonyLabel;
+    QLabel *interestLabel;
+    QLabel *isKeyLabel;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -52,21 +54,28 @@ public:
         scrollAreaWidgetContents->setGeometry(QRect(0, 0, 549, 319));
         nameLabel = new QLabel(scrollAreaWidgetContents);
         nameLabel->setObjectName(QStringLiteral("nameLabel"));
-        nameLabel->setGeometry(QRect(10, 10, 531, 16));
+        nameLabel->setGeometry(QRect(0, 0, 551, 16));
+        nameLabel->setAlignment(Qt::AlignCenter);
+        tableWidget = new QTableWidget(scrollAreaWidgetContents);
+        tableWidget->setObjectName(QStringLiteral("tableWidget"));
+        tableWidget->setGeometry(QRect(0, 81, 551, 241));
         addressLabel = new QLabel(scrollAreaWidgetContents);
         addressLabel->setObjectName(QStringLiteral("addressLabel"));
-        addressLabel->setGeometry(QRect(10, 40, 531, 31));
-        productLabel = new QLabel(scrollAreaWidgetContents);
-        productLabel->setObjectName(QStringLiteral("productLabel"));
-        productLabel->setGeometry(QRect(10, 80, 531, 31));
-        testimonyLabel = new QLabel(scrollAreaWidgetContents);
-        testimonyLabel->setObjectName(QStringLiteral("testimonyLabel"));
-        testimonyLabel->setGeometry(QRect(10, 130, 531, 181));
+        addressLabel->setGeometry(QRect(0, 20, 551, 41));
+        addressLabel->setAlignment(Qt::AlignCenter);
+        interestLabel = new QLabel(scrollAreaWidgetContents);
+        interestLabel->setObjectName(QStringLiteral("interestLabel"));
+        interestLabel->setGeometry(QRect(0, 60, 281, 21));
+        interestLabel->setAlignment(Qt::AlignCenter);
+        isKeyLabel = new QLabel(scrollAreaWidgetContents);
+        isKeyLabel->setObjectName(QStringLiteral("isKeyLabel"));
+        isKeyLabel->setGeometry(QRect(290, 60, 261, 21));
+        isKeyLabel->setAlignment(Qt::AlignCenter);
         scrollArea->setWidget(scrollAreaWidgetContents);
         CustomerInfo->setCentralWidget(centralwidget);
         menubar = new QMenuBar(CustomerInfo);
         menubar->setObjectName(QStringLiteral("menubar"));
-        menubar->setGeometry(QRect(0, 0, 576, 21));
+        menubar->setGeometry(QRect(0, 0, 576, 25));
         CustomerInfo->setMenuBar(menubar);
         statusbar = new QStatusBar(CustomerInfo);
         statusbar->setObjectName(QStringLiteral("statusbar"));
@@ -80,10 +89,10 @@ public:
     void retranslateUi(QMainWindow *CustomerInfo)
     {
         CustomerInfo->setWindowTitle(QApplication::translate("CustomerInfo", "MainWindow", 0));
-        nameLabel->setText(QApplication::translate("CustomerInfo", "TextLabel", 0));
-        addressLabel->setText(QApplication::translate("CustomerInfo", "TextLabel", 0));
-        productLabel->setText(QApplication::translate("CustomerInfo", "TextLabel", 0));
-        testimonyLabel->setText(QApplication::translate("CustomerInfo", "TextLabel", 0));
+        nameLabel->setText(QString());
+        addressLabel->setText(QString());
+        interestLabel->setText(QString());
+        isKeyLabel->setText(QString());
     } // retranslateUi
 
 };
