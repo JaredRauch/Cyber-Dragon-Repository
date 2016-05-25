@@ -10,14 +10,15 @@
  *
  * @param parent
  */
-AddCustomerWindow::AddCustomerWindow(Database* db, QWidget *parent) :
+//AddCustomerWindow::AddCustomerWindow(Database* db, QWidget *parent) :
+AddCustomerWindow::AddCustomerWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::AddCustomerWindow)
 {
     ui->setupUi(this);
 
-    //db = new Database("iCyberSecurity.sqlite");
-    this->db = db;
+    db = new Database("iCyberSecurity.sqlite");
+    //this->db = db;
 }
 
 AddCustomerWindow::~AddCustomerWindow()

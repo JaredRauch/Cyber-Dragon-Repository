@@ -4,7 +4,7 @@
 #include <QMainWindow>
 #include <iterator>
 #include <QObject>
-//#include "addcustomerwindow.h"
+#include "addcustomerwindow.h"
 #include "customerinfo.h"
 #include "Database.h"
 
@@ -31,22 +31,24 @@ public:
         ~CustomerList();
 
 public slots:
-        void on_AddButton_clicked();
+        /*void on_AddButton_clicked();
 
             void on_CustomerWidget_cellClicked(int row, int column);
 
             void on_InfoButton_clicked();
 
-            void on_refreshButton_clicked();
+            */
 //    void AddCustomer(QString name, QString street, QString city, QString Zipcode);
 
-/*private slots:
+private slots:
     void on_AddButton_clicked();
 
     void on_CustomerWidget_cellClicked(int row, int column);
 
     void on_InfoButton_clicked();
-*/
+
+    void on_refreshButton_clicked();
+
 private:
 
     explicit CustomerList(QWidget *parent = 0);
@@ -75,7 +77,7 @@ private:
 
 };
 
-namespace Ui {
+/*namespace Ui {
 class AddCustomerWindow;
 }
 
@@ -108,6 +110,6 @@ private:
 
 
     Database *db;
-};
+};*/
 
 #endif // CUSTOMERLIST_H

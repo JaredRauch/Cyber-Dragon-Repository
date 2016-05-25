@@ -28,6 +28,7 @@ INPUT(
 ./release/moc_customertestimonials.o
 ./release/moc_requestpamphlet.o
 ./release/moc_orderproduct.o
+./release/moc_addcustomerwindow.o
 ./release/moc_customerinfo.o
 ./release/moc_customerlist.o
 ./release/moc_errorwindow.o

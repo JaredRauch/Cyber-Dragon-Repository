@@ -179,11 +179,6 @@ void CustomerList::populateList(){
     }
 }
 
-
-
-
-
-
 /*void CustomerList::on_CustomerWidget_cellClicked(int row, int column)
 {
     int hide_annoying_warning;
@@ -197,11 +192,6 @@ void CustomerList::populateList(){
     hide_annoying_warning = column;
 }*/
 
-
-
-
-
-
 CustomerList::~CustomerList()
 {
     delete ui;
@@ -213,7 +203,8 @@ CustomerList::~CustomerList()
  */
 void CustomerList::on_AddButton_clicked()
 {
-    AddCustomerWindow *window = new AddCustomerWindow(db, this);
+    //AddCustomerWindow *window = new AddCustomerWindow(db, this);
+        AddCustomerWindow *window = new AddCustomerWindow( this);
 
     window->show();
 }
@@ -258,7 +249,7 @@ void CustomerList::on_InfoButton_clicked()
 {
    // CustomerInfo *window = new CustomerInfo;
 
-     //window->show();
+  //  window->show();
 
 
 
