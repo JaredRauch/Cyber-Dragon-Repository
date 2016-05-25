@@ -3,6 +3,10 @@
 #include <QFontDatabase>
 #include <QDebug>
 
+/// Main window construction with formatting, font settings, basic layout established.
+/*!
+ * Creates database, sets fonts, creates basic layout.
+ */
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -27,6 +31,11 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+/// Customer login
+/*!
+ * Login activated. Sends password to customer db, opens customer window of
+ * login success, else indicates failure if login fails.
+ */
 //Basic login for testing with validation
 //Idea being once logged in, hide the login box and show account details panel in its place
 void MainWindow::on_pushButton_clicked()
@@ -68,7 +77,9 @@ void MainWindow::on_pushButton_clicked()
 
    }
 }
-
+/*!
+ * Logout activated.
+ */
 void MainWindow::on_pushButton_logout_clicked()
 {
     ui->lineEdit_username->clear();
@@ -77,37 +88,49 @@ void MainWindow::on_pushButton_logout_clicked()
     ui->pushButton_logout->setVisible(false);
 
 }
-
+/*!
+ * Order product window opened.
+ */
 void MainWindow::on_pushButton_order_clicked()
 {
     orderproduct = new OrderProduct(this);
     orderproduct->show();
 }
-
+/*!
+ * Testimonials window opened.
+ */
 void MainWindow::on_pushButton_testimonials_clicked()
 {
     customertestimonials = new CustomerTestimonials(this);
     customertestimonials->show();
 }
-
+/*!
+ * Request pamphlet opened.
+ */
 void MainWindow::on_pushButton_requestpamplet_clicked()
 {
     requestpamphlet = new RequestPamphlet(this);
     requestpamphlet->show();
 }
-
+/*!
+ * Admin login window opened.
+ */
 void MainWindow::on_actionAdmin_Login_triggered()
 {
     adminlogin = new adminLogin(db, this);
     adminlogin->show();
 }
-
+/*!
+ * Program instructions window opened.
+ */
 void MainWindow::on_actionProgram_Instructions_triggered()
 {
     programinstructions = new ProgramInstructions (this);
     programinstructions->show();
 }
-
+/*!
+ * Contact Us window opened.
+ */
 void MainWindow::on_actionContact_Information_triggered()
 {
     contactus = new ContactUs (this);

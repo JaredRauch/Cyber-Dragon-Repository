@@ -28,7 +28,6 @@ INPUT(
 ./debug/moc_customertestimonials.o
 ./debug/moc_requestpamphlet.o
 ./debug/moc_orderproduct.o
-./debug/moc_addcustomerwindow.o
 ./debug/moc_customerinfo.o
 ./debug/moc_customerlist.o
 ./debug/moc_errorwindow.o
