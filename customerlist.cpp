@@ -256,9 +256,9 @@ info button is clicked
 
 void CustomerList::on_InfoButton_clicked()
 {
-    CustomerInfo *window = new CustomerInfo;
+   // CustomerInfo *window = new CustomerInfo;
 
-     window->show();
+     //window->show();
 
 
 
